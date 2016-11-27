@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css3 边框</title>
+    <style>
+        *{
+            box-sizing:border-box;
+        }
+        body > div{
+            width:300px;
+            height:120px;
+            margin-top:35px;
+        }
+        .border-exercise{
+            border-radius:25px;
+            background-color:#333;
+            color:#fff;
+            padding:20px;
+        }
+        .border-shadow{
+            box-shadow:10px 10px 25px #888;
+            border:1px solid #f00;
+        }
+        .border-image{
+            border: 15px dashed transparent;
+            border-image: url(../images/biubiu/border.png) 30 30 round;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="border-exercise">
+        圆角矩形
+    </div>
+
+    <div class="border-shadow">
+        边框阴影
+    </div>
+
+    <div class="border-image">
+        border image;
+    </div>
+
+
+</body>
+</html>
