@@ -75,7 +75,7 @@ a{
 .content{
     width:1000px;
     margin:30px auto 0 auto;
-    height:auto;
+    height:2000px;
 }
 .content .banner{
     height:auto;
@@ -260,4 +260,84 @@ a{
     width:54px;
     cursor:pointer;
 }
+.layer{
+    width:100%;
+    height:1000px;
+    position:fixed;
+    background-color:rgba(0,0,0,0.3);
+    top:0;
+    left:0;
+    z-index:500;
+    visibility:hidden;
+}
+[for=addRemark]{
+    cursor:pointer;
+}
+#addRemark{
+    visibility:hidden;
+}
+#addRemark:checked ~ .layer{
+    visibility:visible;
+}
+.remark-container{
+    width:920px;
+    height:425px;
+    background-color:#fff;
+    border-radius:4px;
+    margin:100px auto 0 auto;
+}
+.remark-container h4{
+    color:#ccc;
+}
+.remark-container textarea{
+    width:100%;
+    height:254px;
+    border-radius:4px;
+    color:#ccc;
+}
+
+.input-block{
+    width:80%;
+    height:auto;
+    margin:0 auto;
+}
+.input-checks{
+    width:100%;
+    height:auto;
+    overflow:hidden;
+}
+.input-checks div{
+    width: 142px;
+    height: 21px;
+    float: left;
+    position:relative;
+}
+.input-checks div label{
+    position: absolute;
+    left: 0;
+    z-index: 2;
+    padding-left: 21px;
+}
+
+.input-checks div input[type=checkbox]:checked ~ .se-icon{
+    background-position:-377px -70px;
+}
+.input-checks div .se-icon{
+    width:20px;
+    height:20px;
+    background-image:url('../images/bg.png');
+    background-position:-375px -15px;
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+.input-block .footer-wrapper{
+    height:40px;
+    width:100%;
+}
+.input-block .footer-wrapper button{
+    float:right;
+}
+
 
