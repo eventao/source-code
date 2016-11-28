@@ -125,7 +125,24 @@ body > div > h2 {
     border-width: 2px;
 }
 
+.nth-child-container{
+    width:300px;
+    height:auto;
+    overflow:hidden;
+}
+.nth-child-container > .single-selector > li:nth-child(1){
+    background-color:#f00;
+}
 
+.nth-child-container > .odd-even > li:nth-child(odd){
+    background-color:#f00;
+}
+.nth-child-container > .odd-even > li:nth-child(even){
+    background-color:#0f0;
+}
+.nth-child-container > .a3n0 > li:nth-child(3n + 0){
+    background-color:#0f0;
+}
 
 
 
