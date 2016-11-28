@@ -7,7 +7,12 @@
         *{
             box-sizing:border-box;
         }
-        body > div{
+        body .row:after{
+            content:' ';
+            clear:both;
+            display:block;
+        }
+        body .instance{
             width:300px;
             height:120px;
             margin-top:35px;
@@ -18,29 +23,45 @@
             color:#fff;
             padding:20px;
         }
-        .border-shadow{
-            box-shadow:10px 10px 25px #888;
+        .border-shadow,.border-shadow1{
+            box-shadow:10px 10px 25px 5px #888;
             border:1px solid #f00;
+            float:left;
         }
         .border-image{
             border: 15px dashed transparent;
             border-image: url(../images/biubiu/border.png) 30 30 round;
         }
-
+        .border-image2{
+            border: 15px dashed transparent;
+            border-image: url(../images/biubiu/border-image.png) 30 30 round;
+        }
+        .border-shadow1{
+            box-shadow:0 0 25px 5px #888 inset;
+            margin-left:55px;
+        }
     </style>
 </head>
 <body>
-    <div class="border-exercise">
+    <div class="border-exercise instance">
         圆角矩形
     </div>
 
-    <div class="border-shadow">
-        边框阴影
+    <div class="row">
+        <div class="border-shadow instance">
+            边框阴影
+        </div>
+        <div class="border-shadow1 instance">
+            内边框阴影
+        </div>
+
     </div>
 
-    <div class="border-image">
+    <div class="border-image instance">
         border image;
     </div>
+
+    <div class="border-image2 instance"></div>
 
 
 </body>

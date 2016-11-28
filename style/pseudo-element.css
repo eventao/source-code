@@ -133,7 +133,6 @@ body > div > h2 {
 .nth-child-container > .single-selector > li:nth-child(1){
     background-color:#f00;
 }
-
 .nth-child-container > .odd-even > li:nth-child(odd){
     background-color:#f00;
 }
