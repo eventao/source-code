@@ -30,11 +30,9 @@
         }
         .border-image{
             border: 15px dashed transparent;
-            border-image: url(../images/biubiu/border.png) 30 30 round;
-        }
-        .border-image2{
-            border: 15px dashed transparent;
-            border-image: url(../images/biubiu/border-image.png) 30 30 round;
+            border-image-source:url(../images/biubiu/border.png);
+            border-image-repeat:round;/*repeat stretch*/
+            border-image-slice:30 30;
         }
         .border-shadow1{
             box-shadow:0 0 25px 5px #888 inset;
@@ -54,15 +52,11 @@
         <div class="border-shadow1 instance">
             内边框阴影
         </div>
-
     </div>
 
     <div class="border-image instance">
         border image;
     </div>
-
-    <div class="border-image2 instance"></div>
-
 
 </body>
 </html>
