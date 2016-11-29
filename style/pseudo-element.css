@@ -50,12 +50,12 @@ body > div > h2 {
 .gallery-container{
     width:1000px;
     height:auto;
+    overflow: hidden;
 }
 .gallery-container:after{
-    display: table;
-    width: 0;
     clear:both;
     content:' ';
+    display:block;
 }
 .gallery-container > .item{
     width: 100px;
