@@ -3,8 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        @font-face
+        {
+            font-family: glyphicons;
+            src: url('../fonts/glyphicons-halflings-regular.ttf');
+        }
+        @font-face{
+            font-family:bole;
+            src:url('../fonts/伯乐自然萌体.ttf');
+        }
+
+        body{
+
+        }
+        .font-faces{
+            font-family:glyphicons;
+            width:600px;
+            height:300px;
+            border:1px dashed #333;
+        }
+        .font-faces > div{
+            width: 17px;
+            height: 16px;
+            margin: 10px;
+            border: 1px dashed #ddd;
+            padding: 10px;
+            float: left;
+        }
+        .font-faces > div:nth-child(1) span:before{
+            content: "\2b";
+        }
+        .font-faces > div:nth-child(2) span:before{
+            content: "\e005";
+        }
+        .font-faces > div:nth-child(3) span:before{
+            content: "\2601";
+        }
+        .font-faces > div:nth-child(4) span:before{
+            content: "\e013";
+        }
+        .font-faces > div:nth-child(5) span:before{
+            content: "\e005";
+        }
+        .font-faces > div:nth-child(6) span:before{
+            content: "\e046";
+        }
+        .font-faces > div:nth-child(7) span:before{
+            content: "\e139";
+        }
+        .font-faces > div:nth-child(8) span:before{
+            content: "\e148";
+        }
+        .custom-font-family{
+            width:500px;
+            height: 400px;
+            margin:10px;
+            font-family:bole;
+            font-size:26px;
+        }
+    </style>
 </head>
 <body>
+    <div class="font-faces">
+        <div>
+            <span></span>
+        </div>
+        <div>
+            <span></span>
+        </div>
+        <div>
+            <span></span>
+        </div>
+        <div>
+            <span></span>
+        </div>
+        <div>
+            <span></span>
+        </div>
+        <div>
+            <span></span>
+        </div>
+        <div>
+            <span></span>
+        </div>
+    </div>
 
+
+    <div class="custom-font-family">
+        是对方接受的分时度假来发，生的方法是到家了多少发了多少是。
+    </div>
 </body>
 </html>
+
