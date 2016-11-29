@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文本操作</title>
+    <style>
+        .text-container{
+            text-shadow: 0 0 5px #00f;
+            letter-spacing:20px;
+            border-radius:5px;
+        }
+        .break{
+            width:500px;
+            height:auto;
+            border:1px dotted #333;
+            padding:10px;
+            margin:20px 0;
+            border-radius:5px;
+        }
+        .break-auto{
+            /*word-wrap:break-word;*/
+        }
+        .indent{
+            width:130px;
+            text-indent:30px;
+        }
+        .negative-indent{
+            width:300px;
+            height: 112px;
+            margin:20px 0 0 30px;
+            text-indent:-30px;
+        }
+        .align-line{
+            width:600px;
+            height:auto;
+            text-align:right;
+            border:1px solid #333;
+        }
+        .word-letter-spacing{
+            word-spacing:30px;
+            letter-spacing: 3px;
+        }
+        .upcase-lowcase{
+            width:300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="text-container">
+        我是文本阴影
+    </div>
+
+    <div class="break">
+        我是文本自动换行！ 我是文本自动换行！ 我是文本自动换行！ 我是文本自动换行！ 我是文本自动换行！ 我是文本自动换行！ 我是文本自动换行！ 我是文本自动换行！ 我是文本自动换行！ 我是文本自动换行！ 我是文本自动换行！ 我是文本自动换行！ 我是文本自动换行！ 我是文本自动换行！
+    </div>
+    <div class="break break-auto">
+        I'mautobreaklineI'mautobreaklineI'mautobreaklineI'mautobreaklineI'mautobreaklineI'mautobreaklineI'mautobreaklineI'mautobreaklineI'mautobreaklineI'mautobreaklineI'm
+    </div>
+
+    <p class="indent">
+        文本缩进，文本缩进，文本缩进，文本缩进，文本缩进，文本缩进，文本缩进，文本缩进，文本缩进。
+    </p>
+    <p class="negative-indent">
+        <input title="负缩进" type="text">负数文本缩进，负数文本缩进，负数文本缩进，负数文本缩进，负数文本缩进，负数文本缩进，负数文本缩进
+    </p>
+
+    <p class="align-line">
+        文本水平对齐方式啦啦啦。。。<br>
+        text-align:left;<br>
+        text-align:center;<br>
+    </p>
+
+    <p class="word-letter-spacing">
+        This is word spacing and letter spacing.
+    </p>
+
+    <p class="upcase-lowcase">
+        文本大小写<br>
+        text-transform:none;<br>
+        text-transform:uppercase;<br>
+        text-transform:lowercase;<br>
+        text-transform:capitalize;
+    </p>
+
+</body>
+</html>
