@@ -43,6 +43,47 @@
         .upcase-lowcase{
             width:300px;
         }
+        .decoration-container{
+            width:500px;
+            height:35px;
+            padding: 20px;
+            margin:10px;
+            border:1px dotted #000;
+            /*text-decoration:none;*/
+            /*text-decoration:underline;*/
+            text-decoration:overline;
+            /*text-decoration:line-through;*/
+        }
+        .white-space{
+            /*white-space:normal;*/
+            white-space:pre;
+        }
+        .no-wrap{
+            white-space:nowrap;
+            width:200px;
+            border:1px solid deepskyblue;
+            margin:10px;
+            padding:10px;
+        }
+        .no-wrap2{
+            width:400px;
+            margin:10px;
+            padding:10px;
+            border:1px solid deepskyblue;
+        }
+        .no-wrap2 li{
+            text-overflow:ellipsis;
+            white-space:nowrap;
+            overflow:hidden;
+        }
+        .no-wrap2 a{
+            font-size:14px;
+            color:dodgerblue;
+            text-decoration:none;
+        }
+        .no-wrap2 a:hover{
+            color:red;
+        }
     </style>
 </head>
 <body>
@@ -81,6 +122,36 @@
         text-transform:lowercase;<br>
         text-transform:capitalize;
     </p>
+
+    <p class="decoration-container">
+        文本装饰
+    </p>
+
+    <p class="white-space">
+        处理空白                    字符
+    </p>
+    <p class="no-wrap">
+        不换行，超出文本束带结发收到两份的速度佛山大沥乐山大佛老师的浪费收到两份少得可怜。
+    </p>
+    <div class="no-wrap2">
+        <ul>
+            <li>
+                <a href="#">隐藏文本使用省略号，隐藏文本使用省略号，隐藏文本使用省略号，隐藏文本使用省略号</a>
+            </li>
+            <li>
+                <a href="#">隐藏文本使用省略号，隐藏文本使用省略号，隐藏文本使用省略号，隐藏文本使用省略号</a>
+            </li>
+            <li>
+                <a href="#">隐藏文本使用省略号，隐藏文本使用省略号，隐藏文本使用省略号，隐藏文本使用省略号</a>
+            </li>
+            <li>
+                <a href="#">隐藏文本使用省略号，隐藏文本使用省略号，隐藏文本使用省略号，隐藏文本使用省略号</a>
+            </li>
+            <li>
+                <a href="#">隐藏文本使用省略号，隐藏文本使用省略号，隐藏文本使用省略号，隐藏文本使用省略号</a>
+            </li>
+        </ul>
+    </div>
 
 </body>
 </html>
