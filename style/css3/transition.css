@@ -1,0 +1,79 @@
+.transition-effect div{
+    width:210px;
+    height:40px;
+    margin:5px 0;
+    background-color:gold;
+    transition:width 0.2s;
+    border:dashed 1px green;
+}
+.transition-effect div:hover{
+    width:810px;
+}
+.switch{
+    width:185px;
+    height:auto;
+    border-radius:4px;
+    overflow:hidden;
+}
+.switch:after{
+    content:" ";
+    display:block;
+    clear:both;
+}
+.switch button{
+    width:60px;
+    height:35px;
+    transition:width 0.3s;
+    display:block;
+    float:left;
+    border:none;
+    cursor:pointer;
+}
+.switch button:last-child{
+    border-left:1px solid #00a1cb;
+    border-radius:0 4px 4px 0;
+}
+.switch button:focus{
+    width:70px;
+    outline:none;
+    background-color:#00a1cb;
+    color:#fff;
+}
+.custom-buttons{
+    width:800px;
+    height:auto;
+    padding:20px;
+}
+.custom-buttons:after{
+    content:" ";
+    clear:both;
+    display:block;
+}
+.custom-buttons a{
+    width:80px;
+    height:35px;
+    line-height:35px;
+    text-align:center;
+    background-color:#00b3ee;
+    color:#fff;
+    border-radius:4px;
+    margin:0 0 0 5px;
+    float:left;
+    display:block;
+    text-decoration:none;
+    transition:background-color 0.5s,color 0.5s;
+    /*-webkit-appearance:button;*/
+}
+.custom-buttons a:focus{
+    background-color:#00B5AC;
+    color:#000;
+}
+.custom-buttons a:active{
+    background-color:#00B5AC;
+}
+.custom-buttons a:hover{
+    background-color:#00E8DC;
+    color:#000;
+}
+
+
