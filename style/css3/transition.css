@@ -9,6 +9,10 @@
 .transition-effect div:hover{
     width:810px;
 }
+
+.transition-effect div:last-child{
+    transition-delay:2s;
+}
 .switch{
     width:185px;
     height:auto;
@@ -62,8 +66,10 @@
     display:block;
     text-decoration:none;
     transition:background-color 1.5s,color 1.5s;
+
     /*-webkit-appearance:button;*/
 }
+
 .custom-buttons a:focus{
     background-color:#00B5AC;
     color:#000;
@@ -76,4 +82,14 @@
     color:#000;
 }
 
+.translate-case{
+    width:300px;
+    height:200px;
+    background-color:red;
+    transition:transform 0.5s;
+}
+
+.translate-case:hover{
+    transform:translate(500px,-350px) rotate(-1000deg) scale(0.5,0.5);
+}
 
