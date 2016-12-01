@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <title>css单位</title>
     <style>
-        .container{
+        html{
             font-size:0.065em;
         }
-        html{
-            font-size:0.065rem;
+        .container{
+            font-size:15.38em; /*em依赖父元素切换大小*/
         }
         /*.rem-container{*/
-            /*font-size:0.065rem;*/
+            /*font-size:0.065rem;*/  /*rem依赖html元素切换大小*/
         /*}*/
     </style>
 </head>
@@ -19,23 +19,19 @@
     <div class="container">
         <h1>Css单位</h1>
         <h2>1、em</h2>
-        <!--<div class="em-container">-->
-            <!--<span style="font-size:12em;">文字大小</span><br>-->
-            <!--<span style="font-size:14em;">文字大小</span><br>-->
-            <!--<span style="font-size:16em;">文字大小</span><br>-->
-            <!--<span style="font-size:18em;">文字大小</span><br>-->
-            <!--<span style="font-size:20em;">文字大小</span><br>-->
-            <!--<span style="font-size:22em;">文字大小</span>-->
-        <!--</div>-->
+        <div class="em-container">
+            <span style="font-size:1em;">文字大小</span><br>
+            <span style="font-size:2em;">文字大小</span><br>
+            <span style="font-size:3em;">文字大小</span><br>
+            <span style="font-size:4em;">文字大小</span>
+        </div>
 
         <h2>2、rem</h2>
         <div class="rem-container">
             <span style="font-size:12rem;">文字大小</span><br>
             <span style="font-size:14rem;">文字大小</span><br>
             <span style="font-size:16rem;">文字大小</span><br>
-            <span style="font-size:18rem;">文字大小</span><br>
-            <span style="font-size:20rem;">文字大小</span><br>
-            <span style="font-size:22rem;">文字大小</span>
+            <span style="font-size:18rem;">文字大小</span>
         </div>
     </div>
 </body>
