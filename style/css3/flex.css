@@ -1,0 +1,26 @@
+body{
+    margin:0;
+    padding:0;
+}
+*{
+    /*box-sizing:padding-box;*/
+    /*box-sizing:content-box;*/
+    box-sizing:border-box;
+}
+
+.container{
+    width:100%;
+    height:auto;
+}
+.f-box{
+    display:flex;
+}
+.f-item{
+    width:200px;
+    height:170px;
+    background-color:darkslategray;
+    color:#fff;
+    margin:5px;
+}
+
+
