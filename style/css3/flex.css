@@ -20,13 +20,13 @@ body{
     flex-direction:row; /*弹性子元素排列方式*/
     /*flex-direction: row | row-reverse | column | column-reverse*/
 
-    justify-content:center;/*内容水平对其属性*/
+    justify-content:center;/*弹性子元素水平对其属性*/
     /*justify-content: flex-start | flex-end | center | space-between | space-around*/
 
-    align-items: center;/*内容垂直对其属性*/
+    align-items: center;/*弹性子元素垂直对其属性*/
     /*align-items: flex-start | flex-end | center | baseline | stretch*/
 
-    flex-wrap:nowrap; /*弹性子元素换行方式*/
+    flex-wrap:nowrap; /*弹性子元素换行方式,设置父元素上*/
     /*flex-wrap:nowrap|wrap|wrap-reverse*/
 
     align-content: flex-start;/*弹性盒子子元素换行后的对其方式*/
