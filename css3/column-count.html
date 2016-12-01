@@ -11,24 +11,28 @@
         .column-count{
             width:800px;
             height:1000px;
-
-            /*column-width: 300px;  与column-count互斥*/
-
-            column-count:3;
+            column-count:5;
+            /*column-width: 300px;*/
             column-gap:20px;
-            column-rule-style:dotted;
-            column-rule-width:10px;
-            column-rule-color:#f00;
-            column-rule: 1px dotted #000;
+            /*column-rule-style:dotted;*/
+            /*column-rule-width:10px;*/
+            /*column-rule-color:#f00;*/
+            column-rule: 10px inset #000;
+            column-fill:balance;
+            column-break-before:always;
+            /*-webkit-column-break-before:always;*/
+
         }
         .column-count h2{
             text-align:center;
             column-span:all;
+
         }
         .child{
             width: 145px;
-            height: 300px;
+            height: 190px;
             background-color: #00a1cb;
+            background:url(../images/css3/background-2.png);
         }
     </style>
 </head>
@@ -38,35 +42,34 @@
             column-span: all;
         </h2>
 
-        啦減肥撒大了減肥撒了解放了手機佛山市速度發射點發射點
-        設計費阿里山的就了似的發射點缩进发来撒减肥看世界的看法接受的方式地方收到了发生的
-        撒点粉就是大路口附近是考虑到经费老师的减肥开始的焚枯食淡
-        受到了房间三菱电机法律撒娇烦死了是的速度快放假示例
-        啊算了的风景临时卡大家疯狂束带结发卡死啦的积分开始懂了见风使舵精神的理解富士康
-        撒空间地方就受到了房间三菱电机束带结发开始的辣椒粉临时卡大家方式
-        撒旦浪费就是代理费就是劳动纠纷凯撒多了几分可是的理解放声大哭方式
-        阿斯顿放假撒旦浪费江苏大丰受到了房间水电费结束符速度舍得离开房间三打两建
-        撒快乐的风景速度福建省打开了房间卡上了飞机收到两份历史地看了
-        撒快乐的风景速度福建省打开了房间卡上了飞机收到两份历史地看了
-        撒快乐的风景速度福建省打开了房间卡上了飞机收到两份历史地看了
-        撒快乐的风景速度福建省打开了房间卡上了飞机收到两份历史地看了
-        撒快乐的风景速度福建省打开了房间卡上了飞机收到两份历史地看了
-        撒快乐的风景速度福建省打开了房间卡上了飞机收到两份历史地看了
-        撒快乐的风景速度福建省打开了房间卡上了飞机收到两份历史地看了
-        <!--<div class="child">-->
-        <!--</div>-->
-        <!--<div class="child">-->
-        <!--</div>-->
-        <!--<div class="child">-->
-        <!--</div>-->
-        <!--<div class="child">-->
-        <!--</div>-->
-        <!--<div class="child">-->
-        <!--</div>-->
-        <!--<div class="child">-->
-        <!--</div>-->
-        <!--<div class="child">-->
-        <!--</div>-->
+        CSS即层叠样式表（Cascading StyleSheet）。 在网页制作时采用层叠样式表技术，
+        可以有效地对页面的布局、字体、颜色、背景和其它效果实现更加精确的控制。 只
+        要对相应的代码做一些简单的修改，就可以改变同一页面的不同部分，或者页数不同
+        的网页的外观和格式。CSS3是CSS技术的升级版本，CSS3语言开发是朝着模块化发展
+        的。以前的规范作为一个模块实在是太庞大而且比较复杂，所以，把它分解为一些小
+        的模块，更多新的模块也被加入进来。这些模块包括： 盒子模型、列表模块、超链接
+        方式 、语言模块 、背景和边框 、文字特效 、多栏布局等。
+
+        Grid布局图中[1]  蓝色的线不会出现在实际的网页中。
+        Grid布局应用很广泛，最简单的例子就是内容的分栏显示。
+        对于右边这个布局复杂的三栏网页来说，如果使用CSS3Grid布局的话，我们只需这样写：
+        body{columns:3;column-gap:0.5in;}
+        img{float:pagetopright;width:3gr;}
+        其中，body部分声明页面为3栏，栏间距为0.5英寸；img中float属性指明图片浮动位置
+        为页面的右上角，而宽度为3个栏宽。只需这样两行CSS，就可以实现这个复杂布局。
+        <br>
+        Flexbox(伸缩布局盒) 是 CSS3 中一个新的布局模式，为了现代网络中更为
+        flexbox
+        flexbox
+        复杂的网页需求而设计。
+        Flexbox 由 伸缩容器 和 伸缩项目 组成。通过设置元素的 display 属性为 flex 或 inline-flex 可以得到一个伸缩容器。设置为 flex 的容器被渲染为一个块级元素，而设置为 inline-flex 的容器则渲染为一个行内元素。
+        Flexbox通常能让我们更好的操作他的子元素布局，例如：
+        如果元素容器没有足够的空间，我们无需计算每个元素的宽度，就可以设置他们在同一行；
+        可以快速让他们布局在一列；
+        可以方便让他们对齐容器的左、右、中间等；
+        无需修改结构就可以改变他们的显示顺序；
+        如果元素容器设置百分比和视窗大小改变，不用担心未指定元素的确切宽度而破坏布局，因为容器中的每个子元素都可以自动分配容器的宽度或高度的比例。[2]
+
     </div>
 </body>
 </html>
