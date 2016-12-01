@@ -41,8 +41,6 @@ body{
     background-clip:content-box;
     padding:5px;
     border:1px solid #000;
-
-
 }
 .f-item:nth-child(2){
     /*弹性子元素排序*/
@@ -57,16 +55,16 @@ body{
 }
 
 .perfect-center{
-    width:300px;
-    height:300px;
-    border:1px solid #2aabd2;
+    width:80%;
+    height:600px;
+    border:5px solid #2aabd2;
     display:flex;
-    margin:30px;
+    margin:30px auto 0 auto;
 }
 .center-item{
     width:120px;
     height:120px;
-    border:1px solid #000;
+    border:5px solid #000;
     margin:auto;
 }
 
