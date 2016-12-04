@@ -3,21 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-
     <title>多媒体查询使用不同的样式表</title>
-
     <link rel="stylesheet" href="../../style/basis.css">
     <link rel="stylesheet" media="screen and (min-width:480px)" href="../../style/css3/media/mobile.css">
     <link rel="stylesheet" media="screen and (min-width:800px)" href="../../style/css3/media/tablet.css">
     <link rel="stylesheet" media="screen and (min-width:1000px)" href="../../style/css3/media/pc.css">
 
+    <style>
+        @media screen and (max-width:699px) and (min-width: 520px),(min-width: 1151px) {
+            ul li{
+                padding-left: 30px;
+            }
+            ul li:before{
+                content:'\2709';
+            }
+            ul li {
+                color:#4355FC;
+            }
+        }
+        @media screen and (max-width:1000px) and (min-width:700px) {
+            ul li a:before {
+                content: "Email: ";
+                font-style: italic;
+            }
+        }
+        @media screen and (min-width: 1001px) {
+            ul li a:after {
+                content: " (" attr(data-email) ")";
+                font-size: 12px;
+                font-style: italic;
+            }
+        }
+    </style>
 </head>
 <body>
-
 <div class="container">
-    <aside>
-
-    </aside>
+    <h1>改变浏览器宽度，查看效果!</h1>
+    <ul>
+        <li>
+            <a data-email="johndoe@example.com"
+               href="mailto:johndoe@example.com">John Doe</a>
+        </li>
+        <li>
+            <a data-email="marymoe@example.com"
+               href="mailto:marymoe@example.com">Mary Moe</a>
+        </li>
+        <li>
+            <a data-email="amandapanda@example.com"
+               href="mailto:amandapanda@example.com">Amanda Panda</a>
+        </li>
+    </ul>
 </div>
 </body>
 </html>

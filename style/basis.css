@@ -1,6 +1,7 @@
 body{
     margin:0;
     padding:0;
+    color:#fff;
 }
 *{
     box-sizing:border-box;
@@ -9,4 +10,15 @@ body{
     width:100vw;
     height:auto;
     min-height:500px;
+    background-color:#2D2D2D;
+    border-top:1px solid transparent;
 }
+ul {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+    padding: 3px;
+    color:#fff;
+}
+
