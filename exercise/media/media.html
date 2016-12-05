@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>媒体查询</title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            color:#fff;
+        }
+        a{
+            color:#fff;
+        }
+
+        .container{
+            width:100vw;
+            height:60vh;
+            background-color:#000;
+            /*border-top:1px solid transparent;*/
+            /*float:left;*/
+            overflow:hidden;
+        }
+        @media all and (min-width:1001px) {
+            .container{
+                background-color:deepskyblue;
+            }
+        }
+        @media screen and (min-width:800px) and (max-width:1001px){
+            .container{
+                background-color:navy;
+            }
+        }
+        @media screen and (min-width:400px) and (max-width:800px){
+            .container{
+                background-color:darkcyan;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>改变浏览器窗口大小，查看效果！</h1>
+        <ul>
+            <li>
+                <a href="mailto:johndoe@example.com">
+                    John doe
+                </a>
+            </li>
+            <li>
+                <a href="mailto:david@example.com">
+                    David
+                </a>
+            </li>
+            <li>
+                <a href="mailto:paubo@example.com">
+                    Paubo
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
