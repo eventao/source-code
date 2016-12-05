@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>媒体查询</title>
+    <link rel="stylesheet"
+          media="screen and (min-width:0)"
+          href="../../style/css3/media/mobile.css">
+
+    <link rel="stylesheet"
+          media="screen and (min-width:800px)"
+          href="../../style/css3/media/tablet.css">
+
+    <link rel="stylesheet"
+          media="screen and (min-width:1000px)"
+          href="../../style/css3/media/pc.css">
+
     <style>
         @font-face{
             font-family:"glyphicons";
@@ -24,37 +36,38 @@
         .container{
             width:100vw;
             height:60vh;
-            background-color:#000;
+            /*background-color:#000;*/
             /*border-top:1px solid transparent;*/
             /*float:left;*/
             overflow:hidden;
         }
-        @media all and (min-width:1001px) {
-            .container{
-                background-color:deepskyblue;
-            }
-            .container li:before{
-                content:'\2709';
-                color:blue;
-            }
-            .container li a:after{
-                content:attr(data-email);
-            }
-        }
-        @media screen and (min-width:800px) and (max-width:1001px){
-            .container{
-                background-color:navy;
-                color:blue;
-            }
-        }
-        @media screen and (min-width:400px) and (max-width:800px){
-            .container{
-                background-color:darkcyan;
-            }
-            .container li:before{
-                content:'\2709';
-            }
-        }
+
+        /*@media all and (min-width:1001px) {*/
+            /*.container{*/
+                /*background-color:deepskyblue;*/
+            /*}*/
+            /*.container li:before{*/
+                /*content:'\2709';*/
+                /*color:blue;*/
+            /*}*/
+            /*.container li a:after{*/
+                /*content:attr(data-email);*/
+            /*}*/
+        /*}*/
+        /*@media screen and (min-width:800px) and (max-width:1001px){*/
+            /*.container{*/
+                /*background-color:navy;*/
+                /*color:blue;*/
+            /*}*/
+        /*}*/
+        /*@media screen and (min-width:400px) and (max-width:800px){*/
+            /*.container{*/
+                /*background-color:darkcyan;*/
+            /*}*/
+            /*.container li:before{*/
+                /*content:'\2709';*/
+            /*}*/
+        /*}*/
     </style>
 </head>
 <body>
