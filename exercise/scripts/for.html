@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for</title>
+</head>
+<body>
+
+<script>
+    document.write("<h1>for循环语法</h1>");
+    for(var i = 0; i < 10; i++){
+        document.write("&nbsp;*");
+    }
+    document.write("<h1>for循环嵌套</h1>");
+    for(i = 0; i < 10; i++){
+        for(var j = 0; j < 10; j++){
+            document.write("&nbsp;*");
+        }
+        document.write("<br>");
+    }
+    document.write("<h1>for循环半金字塔</h1>");
+    for(i = 0; i < 10; i++){
+        for(j = 0; j <= i; j++){
+            document.write("&nbsp;*");
+        }
+        document.write("<br>");
+    }
+    document.write("<h1>for循环半金字塔2</h1>");
+    for(i = 0; i < 10; i++){
+        for(j = 10; j > i; j--){
+            document.write("&nbsp;*");
+        }
+        document.write("<br>");
+    }
+</script>
+</body>
+</html>
+
