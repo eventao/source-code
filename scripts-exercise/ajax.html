@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+</head>
+<body>
+
+<script>
+    var xmlRequest = XMLHttpRequest;
+    if(window.XMLHttpRequest){
+        xmlRequest = new XMLHttpRequest();
+    }else if(window.ActiveXObject){
+        xmlRequest = new new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    if(xmlRequest){
+        xmlRequest.onreadystatechange = function(even){
+            if(xmlRequest.readyState == 4){
+                if(xmlRequest.status == 200){
+                    var data = JSON.parse(xmlRequest.responseText);
+                    console.log(data);
+                }else{}
+            }
+            console.log("server retrieved " + xmlRequest.readyState + " " + xmlRequest.status);
+        };
+        var url = "/server/data.json";
+        xmlRequest.open("GET",url,true);
+        xmlRequest.send(null);
+    }
+</script>
+</body>
+</html>
