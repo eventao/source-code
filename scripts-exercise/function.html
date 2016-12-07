@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <title>函数</title>
 </head>
-<body>
+<body onload="pageLoaded()">
 
 <script>
+    function outputTitle(title){
+        document.write("<h1>" + title + "</h1>");
+    }
 
     //函数声明
-    function fnExercise(){
-        document.write('I');
+    function pageLoaded(){
+        document.write("I'm a function!");
     }
 </script>
+
 </body>
 </html>
