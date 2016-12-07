@@ -7,9 +7,33 @@
 <body>
 <div id="container">
     <div id="child">
+        <div id="grandSon">
+        </div>
+    </div>
+    <div id="child2">
     </div>
 </div>
 <script>
+    var container = document.getElementById("container");
+    container.style.width = "500px";
+    container.style.height = "200px";
+    container.style.backgroundColor = "rgba(255,255,0,1)";
+    var nodes = container.childNodes;
+
+
+    var childElement = document.getElementById("child");
+    var pElement = childElement.parentNode;
+
+
+    function showName(title,title1,title2){
+        var s = "大家好，我叫";
+        var s1 = "，字" + title1;
+        var s2 = "，号" + title2;
+        console.log(s + title + s1 + s2);
+    }
+    showName("思聪","小丝丝","国民老公");
+    showName("小明","黄教主","妇女之友");
+    showName("姚兵","王小二","小兵张嘎");
 
 </script>
 </body>
