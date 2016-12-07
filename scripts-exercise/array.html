@@ -36,7 +36,8 @@ String  Number  Array
 
     document.write("<h1>数组</h1>");
     document.write("<h2>数组定义</h2>");
-    var array1 = new Array();
+//    var array1 = new Array();
+    var array1 = [];
     array1.push("123");
     array1.push(123);
     array1.push(true);
@@ -44,6 +45,7 @@ String  Number  Array
     array1.push(null);
     array1.push({title:"I'm a object."});
     document.write("<h2>数组遍历</h2>");
+
     for(var i = 0; i < array1.length; i++){
         document.writeln(array1[i]);
     }
