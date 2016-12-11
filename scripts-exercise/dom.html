@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>DOM操作</title>
+    <style>
+        body{
+            color:#fff;
+        }
+    </style>
 </head>
 <body>
 <div id="container">
@@ -12,8 +17,51 @@
     </div>
     <div id="child2">
     </div>
+
+    <!--dom操作--子元素-->
+    <div class="container"
+        style="width:800px;height:600px;background-color:#fd3427">
+        <div class="inner">1</div>
+        <div class="inner">2</div>
+        <div class="inner">3</div>
+        <div class="inner">4</div>
+    </div>
+
 </div>
 <script>
+    function output(msg){
+        document.write("<br/>");
+        document.write("<h1>" + msg + "</h1>");
+    }
+
+    var klassContainer = document.getElementsByClassName("container");
+    var container0 = klassContainer[0];
+
+    var divElement = document.createElement("div");
+    divElement.innerText = "5";
+    container0.appendChild(divElement);
+
+    container0.innerHTML = container0.innerHTML + "<div>6</div>";
+
+
+
+
+
+
+
+    var children = container0.children;
+    output("children属性："+children.length);
+
+    var childNodes = container0.childNodes;
+    output("childNodes属性："+childNodes.length);
+    output("childElementCount属性："+container0.childElementCount);
+
+
+
+
+
+
+
     var container = document.getElementById("container");
     container.style.width = "500px";
     container.style.height = "200px";
