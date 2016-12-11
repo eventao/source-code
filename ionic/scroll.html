@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" >
+    <title>Scroll</title>
+    <link rel="stylesheet" href="../lib/ionic/css/ionic.min.css">
+</head>
+<body ng-app="starter" ng-controller="testController">
+
+<div class="container" style="width:100vw;height:100vh;">
+    <!--<ion-scroll-->
+            <!--[delegate-handle=""]-->
+            <!--[direction=""]-->
+            <!--[paging=""]-->
+            <!--[on-refresh=""]-->
+            <!--[on-scroll=""]-->
+            <!--[scrollbar-x=""]-->
+            <!--[scrollbar-y=""]-->
+            <!--[zooming=""]-->
+            <!--[min-zoom=""]-->
+            <!--[max-zoom=""]>-->
+        <!--...-->
+    <!--</ion-scroll>-->
+    <ion-scroll style="width:100vw;height:100vh;">
+        <ion-content>
+            <ion-list">
+                <ion-item>港岛妹妹</ion-item>
+                <ion-item>你献给我的西班牙馅饼</ion-item>
+                <ion-item>甜蜜的融化了我</ion-item>
+                <ion-item>天空之城在哭泣</ion-item>
+                <ion-item>港岛妹妹</ion-item>
+                <ion-item>我们曾拥有的甜蜜的爱情</ion-item>
+                <ion-item>疯狂的撕裂了我</ion-item>
+                <ion-item>天空之城在哭泣</ion-item>
+                <ion-item>港岛妹妹</ion-item>
+                <ion-item>你献给我的西班牙馅饼</ion-item>
+                <ion-item>甜蜜的融化了我</ion-item>
+                <ion-item>天空之城在哭泣</ion-item>
+                <ion-item>港岛妹妹</ion-item>
+                <ion-item>我们曾拥有的甜蜜的爱情</ion-item>
+                <ion-item>疯狂的撕裂了我</ion-item>
+                <ion-item>天空之城在哭泣</ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-scroll>
+</div>
+
+<script src="../lib/ionic/js/ionic.bundle.js"></script>
+<script>
+    angular.module('starter', ['ionic'])
+            .run(function($ionicPlatform) {
+                $ionicPlatform.ready(function() {
+                    if(window.cordova && window.cordova.plugins.Keyboard) {
+                        cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+                        cordova.plugins.Keyboard.disableScroll(true);
+                    }
+                    if(window.StatusBar) {
+                        StatusBar.styleDefault();
+                    }
+                });
+            })
+            .controller("testController",["$scope",function($scope){
+            }]);
+</script>
+
+</body>
+</html>

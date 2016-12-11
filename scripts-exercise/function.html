@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数</title>
+</head>
+<body>
+
+<script>
+    function invokeHandle1(){
+        console.log("函数被函数调用！");
+    }
+    function loaded(parameter){
+//        alert('你好啊！');
+        invokeHandle1();
+        parameter();
+    }
+    loaded(invokeHandle1);
+
+    document.write("<h1>arguments</h1>");
+    function multiPar(){
+        var p1 = arguments[0];
+        var p2 = arguments[1];
+        var p3 = arguments[2];
+        var p4 = arguments[3];
+        document.writeln(p1);
+        document.writeln(p2);
+        document.writeln(p3);
+        document.writeln(p4);
+    }
+    multiPar(1,2,3,4);
+
+    document.write("<h1>setTimeout</h1>");
+    var i = 0;
+    function outputMsg(){
+        document.write("<br>");
+        document.write(i);
+        if(i < 8){
+            setTimeout(function(){
+                outputMsg();
+                i++;
+            },300);
+        }
+    }
+    outputMsg();
+
+</script>
+
+</body>
+</html>

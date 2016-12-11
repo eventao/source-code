@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM操作</title>
+    <style>
+        body{
+            color:#fff;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="child">
+        <div id="grandSon">
+        </div>
+    </div>
+    <div id="child2">
+    </div>
+
+    <!--dom操作--子元素-->
+    <div class="container"
+        style="width:800px;height:600px;background-color:#fd3427">
+        <div class="inner">1</div>
+        <div class="inner">2</div>
+        <div class="inner">3</div>
+        <div class="inner">4</div>
+    </div>
+
+</div>
+<script>
+    function output(msg){
+        document.write("<br/>");
+        document.write("<h1>" + msg + "</h1>");
+    }
+
+    var klassContainer = document.getElementsByClassName("container");
+    var container0 = klassContainer[0];
+
+    var divElement = document.createElement("div");
+    divElement.innerText = "5";
+    container0.appendChild(divElement);
+
+    container0.innerHTML = container0.innerHTML + "<div>6</div>";
+
+
+
+
+
+
+
+    var children = container0.children;
+    output("children属性："+children.length);
+
+    var childNodes = container0.childNodes;
+    output("childNodes属性："+childNodes.length);
+    output("childElementCount属性："+container0.childElementCount);
+
+
+
+
+
+
+
+    var container = document.getElementById("container");
+    container.style.width = "500px";
+    container.style.height = "200px";
+    container.style.backgroundColor = "rgba(255,255,0,1)";
+    var nodes = container.childNodes;
+
+
+    var childElement = document.getElementById("child");
+    var pElement = childElement.parentNode;
+
+
+    function showName(title,title1,title2){
+        var s = "大家好，我叫";
+        var s1 = "，字" + title1;
+        var s2 = "，号" + title2;
+        console.log(s + title + s1 + s2);
+    }
+    showName("思聪","小丝丝","国民老公");
+    showName("小明","黄教主","妇女之友");
+    showName("姚兵","王小二","小兵张嘎");
+
+</script>
+</body>
+</html>

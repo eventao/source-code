@@ -1,0 +1,78 @@
+@font-face {
+    font-family: glyphicons;
+    src: url('../../fonts/glyphicons-halflings-regular.ttf');
+}
+body{
+    font-family: 'microsoft yahei', serif,glyphicons;
+    font-size:0.065em;
+}
+body,form,input{
+    margin:0;
+    padding:0;
+}
+*{
+    box-sizing:border-box;
+}
+a{
+    color:#fff;
+    text-decoration:none;
+    font-size:1vw;
+}
+.container{
+    width:80vw;
+    height:auto;
+    margin:0 auto;
+}
+.display-flex{
+    display:flex;
+}
+.align-items-center{
+    align-items:center;
+}
+.full-height{
+    height:100%;
+}
+header{
+    height:11vw;
+}
+#logo{
+    width: 13vw;
+    margin-top: 2vw;
+}
+nav{
+    width: 100vw;
+    height: 2.2vw;
+    background-color: #8C2106;
+}
+nav a{
+    display:block;
+}
+.search-wrapper{
+    width:16vw;
+    height:75%;
+    border-radius:8px;
+    border:1px solid #6F1A04;
+    background-color:#E13409;
+    margin-left:1.8vw;
+}
+.search-wrapper input{
+    width:90%;
+    height:100%;
+    border:none;
+    background:none;
+    padding-left:0.4vw;
+}
+.search-wrapper input{
+    display:block;
+}
+.search-wrapper input:focus{
+    outline:none;
+}
+.search-wrapper .search{
+    display:block;
+    font-size:1.1vw;
+    cursor:pointer;
+}
+.search-wrapper .search:before{
+    content:'\e003';
+}

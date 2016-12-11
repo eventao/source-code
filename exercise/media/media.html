@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>媒体查询</title>
+    <link rel="stylesheet"
+          media="screen and (min-width:0)"
+          href="../../style/css3/media/mobile.css">
+
+    <link rel="stylesheet"
+          media="screen and (min-width:800px)"
+          href="../../style/css3/media/tablet.css">
+
+    <link rel="stylesheet"
+          media="screen and (min-width:1000px)"
+          href="../../style/css3/media/pc.css">
+
+    <style>
+        @font-face{
+            font-family:"glyphicons";
+            src:url(../../fonts/glyphicons-halflings-regular.woff2);
+        }
+        body{
+            margin:0;
+            padding:0;
+            color:#fff;
+            font-family:"glyphicons",serif;
+        }
+        a{
+            color:#fff;
+        }
+        li{
+            list-style:none;
+        }
+        .container{
+            width:100vw;
+            height:60vh;
+            /*background-color:#000;*/
+            /*border-top:1px solid transparent;*/
+            /*float:left;*/
+            overflow:hidden;
+        }
+
+        /*@media all and (min-width:1001px) {*/
+            /*.container{*/
+                /*background-color:deepskyblue;*/
+            /*}*/
+            /*.container li:before{*/
+                /*content:'\2709';*/
+                /*color:blue;*/
+            /*}*/
+            /*.container li a:after{*/
+                /*content:attr(data-email);*/
+            /*}*/
+        /*}*/
+        /*@media screen and (min-width:800px) and (max-width:1001px){*/
+            /*.container{*/
+                /*background-color:navy;*/
+                /*color:blue;*/
+            /*}*/
+        /*}*/
+        /*@media screen and (min-width:400px) and (max-width:800px){*/
+            /*.container{*/
+                /*background-color:darkcyan;*/
+            /*}*/
+            /*.container li:before{*/
+                /*content:'\2709';*/
+            /*}*/
+        /*}*/
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>改变浏览器窗口大小，查看效果！</h1>
+        <ul>
+            <li>
+                <a href="mailto:johndoe@example.com" data-email="johndoe@example.com">
+                    John doe
+                </a>
+            </li>
+            <li>
+                <a href="mailto:david@example.com"
+                    data-email="david@example.com">
+                    David
+                </a>
+            </li>
+            <li>
+                <a href="mailto:paubo@example.com"
+                    data-email="paubo@example.com">
+                    Paubo
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

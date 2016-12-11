@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css单位</title>
+    <style>
+        html{
+            font-size:0.065em;
+        }
+        .container{
+            font-size:15.38em; /*em依赖父元素切换大小*/
+        }
+        /*.rem-container{*/
+            /*font-size:0.065rem;*/  /*rem依赖html元素切换大小*/
+        /*}*/
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Css单位</h1>
+        <h2>1、em</h2>
+        <div class="em-container">
+            <span style="font-size:1em;">文字大小</span><br>
+            <span style="font-size:2em;">文字大小</span><br>
+            <span style="font-size:3em;">文字大小</span><br>
+            <span style="font-size:4em;">文字大小</span>
+        </div>
+
+        <h2>2、rem</h2>
+        <div class="rem-container">
+            <span style="font-size:12rem;">文字大小</span><br>
+            <span style="font-size:14rem;">文字大小</span><br>
+            <span style="font-size:16rem;">文字大小</span><br>
+            <span style="font-size:18rem;">文字大小</span>
+        </div>
+    </div>
+</body>
+</html>
