@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件</title>
+</head>
+<body>
+<script>
+
+
+    var eventHandles = {
+        addEventListener:function(key,handle){
+            if(typeof eventHandles[key] == "undefined"){
+                eventHandles[key] = [];
+            }
+            eventHandles[key].push(handle);
+        },
+        dispatcher:function(key,p){
+            var l = eventHandles[key].length;
+            for(var i = 0; i < l; i++){
+                eventHandles[key][i](p);
+            }
+        },
+        default:"default"
+    };
+    eventHandles.title = "I'm title!";
+    eventHandles["zh-title"] = "中文标题";
+    console.log(eventHandles["zh-title"]);
+
+
+    function makeWater() {
+        for (var i = 0; i < 100; i++) {
+            var temp = i + 1;
+            if(temp == 100){
+                eventHandles.dispatcher("water-is-boil",temp);
+            }
+        }
+    }
+
+    eventHandles.addEventListener(
+            "water-is-boil",
+            function(e){
+                document.write("水开了！");
+            });
+
+    makeWater();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单操作</title>
+    <style>
+        form{
+            width:800px;
+            height:auto;
+        }
+        .title{
+            width:200px;
+            height:30px;
+            text-align:right;
+        }
+        .content{
+            width:600px;
+            height:30px;
+            text-align:left;
+        }
+        .row{
+            width:100%;
+            height:auto;
+            clear:both;
+        }
+        .row > div{
+            float:left;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h1>学员信息表</h1>
+        <div class="row">
+            <div class="title">
+                姓名：
+            </div>
+            <div class="content">
+                <input type="text" title="请输入姓名">
+            </div>
+        </div>
+        <div class="row">
+            <div class="title">
+                性别：
+            </div>
+            <div class="content">
+                <input type="radio" name="gender" title="男">
+                男
+                <input type="radio" name="gender" title="女">
+                女
+            </div>
+        </div>
+        <div class="row">
+            <div class="title">
+                爱好：
+            </div>
+            <div class="content">
+                <input type="checkbox" name="favorite" class="favorite" title="攀岩">
+                攀岩
+                <input type="checkbox" name="favorite" class="favorite" title="滑雪">
+                滑雪
+                <input type="checkbox" name="favorite" class="favorite" title="跳伞">
+                跳伞
+                <input type="checkbox" name="favorite" class="favorite" title="保龄球">
+                保龄球
+                <input type="checkbox" name="favorite" class="favorite" title="斯诺克">
+                斯诺克
+                <input type="checkbox" id="allFavorite" title="全选">
+                全选
+                <input type="checkbox" id="noneFavorite" title="全不选">
+                全不选
+                <input type="checkbox" id="reverseFavorite" title="反选">
+                反选
+            </div>
+        </div>
+    </form>
+
+    <script>
+        var allChecked = false;
+        var noneChecked = true;
+
+        var noneFavorite = document.getElementById("noneFavorite");
+        noneFavorite.checked = noneChecked;
+
+        var allFavorite = document.getElementById("allFavorite");
+        allFavorite.checked = allChecked;
+        allFavorite.addEventListener("click",function(e){
+            var flag = e.currentTarget.checked;
+            var favorites = document.getElementsByClassName('favorite');
+            for(var i = 0; i < favorites.length; i++){
+                favorites[i].checked = flag;
+            }
+            noneFavorite.checked = !flag;
+        });
+
+        noneFavorite.addEventListener("click",function(e){
+            var flag = e.currentTarget.checked;
+            var favorites = document.getElementsByClassName('favorite');
+            for(var i = 0; i < favorites.length; i++){
+                favorites[i].checked = !flag;
+            }
+            allFavorite.checked = !flag;
+        });
+
+        var favorites = document.getElementsByClassName('favorite');
+        for(var j = 0; j < favorites.length; j ++){
+            favorites[j].addEventListener("click",function(e){
+                var flag = e.currentTarget.checked;
+                allChecked = true;
+                for(var j0 = 0;j0 < favorites.length; j0 ++){
+                    if(!favorites[j0].checked){
+                        allChecked = false;
+                    }
+                }
+                allFavorite.checked = allChecked;
+                noneFavorite.checked = !allChecked;
+            });
+        }
+
+    </script>
+</body>
+</html>
