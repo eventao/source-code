@@ -84,6 +84,92 @@
     }
 
 
+    document.write("<h3>七、break</h3>");
+    for(var br = 0; br < 10; br++){
+        if(br > 4)break;
+        document.write("<br>");
+        document.write(br);
+    }
+
+    document.write("<h3>八、continue</h3>");
+    for(var con = 0; con < 10; con++){
+        if(con == 5)continue;
+        document.write("<br>");
+        document.write(con);
+    }
+
+    document.write("<h3>九、非</h3>");
+    var flag = false;
+    if(flag){
+        document.write("<br>");
+        document.write("flag = "+flag);
+    }else{
+        document.write("<br>");
+        document.write("else flag = "+flag);
+    }
+    if(!flag){
+        document.write("<br>");
+        document.write("!flag = "+flag);
+    }
+
+    document.write("<h3>十、分支语句else if</h3>");
+    flag = 0;
+    if(flag == 0){
+        document.write("<br>");
+        document.write("flag = " + flag);
+    }else if(flag == 1){
+        document.write("<br>");
+        document.write("flag = " + flag);
+    }else if(flag == 2){
+        document.write("<br>");
+        document.write("flag = " + flag);
+    }else{
+        document.write("<br>");
+        document.write("flag = " + flag);
+    }
+
+
+    document.write("<h3>十一、分支语句if if if</h3>");
+    if(flag == 0){
+        document.write("<br>");
+        document.write("flag = " + flag);
+    }
+    if(flag == 1){
+        document.write("<br>");
+        document.write("flag = " + flag);
+    }
+    if(flag == 2){
+        document.write("<br>");
+        document.write("flag = " + flag);
+    }
+    if(flag == 3){
+        document.write("<br>");
+        document.write("flag = " + flag);
+    }
+
+    document.write("<h3>十二、分支语句switch</h3>");
+    switch(flag){
+        case 0:
+            document.write("<br>");
+            document.write("case:0 = " + flag);
+            break;
+        case 1:
+            document.write("<br>");
+            document.write("case:1 = " + flag);
+            break;
+        case 2:
+            document.write("<br>");
+            document.write("case:2 = " + flag);
+            break;
+        default:
+            document.write("<br>");
+            document.write("switch:flag = " + flag);
+    }
+
+    document.write("<h3>十三、按位与 & </h3>");
+    document.write("<br>");
+    document.write("2&4:" + 2&4);
+
 </script>
 </body>
 </html>

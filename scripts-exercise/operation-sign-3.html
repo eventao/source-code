@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三元运算符</title>
+</head>
+<body>
+<script>
+    function operationSign(flag){
+        flag ? document.write("?true"):document.write("?false");
+    }
+    operationSign(true);
+    document.write("<br>");
+
+    var student = {
+        name:"向老师"
+        ,gender:"男"
+        ,color:"yellow"
+        ,target:"美女"
+        ,sleep:function(){}
+    };
+    document.write(student.gender);
+    delete student.gender;
+    document.write("<br>");
+    document.write(student.gender);
+    document.write("<br>");
+
+    document.write("<h3>for-in</h3>");
+    for(var key in student){
+        document.writeln("key:" + key);
+        document.write("name:" + student["name"]);
+        document.write("value:" + student[key]);
+        document.write("<br>");
+    }
+
+
+
+
+</script>
+</body>
+</html>
