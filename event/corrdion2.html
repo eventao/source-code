@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手风琴2</title>
+    <style>
+        *{
+            box-sizing:border-box;
+        }
+        .container{
+            width:800px;
+            height:500px;
+            overflow-y:auto;
+        }
+        [data-flag]{
+            width:100%;
+            height:35px;
+            background-color:#00a1cb;
+            color:#fff;
+            cursor:pointer;
+            line-height:35px;
+            padding-left:10px;
+            margin-top:3px;
+        }
+        [data-flag] + div{
+            width:100%;
+            height:0;
+            transition:height 0.5s;
+            overflow:hidden;
+            border-bottom:1px solid #ccc;
+            border-left:1px solid #ccc;
+            border-right:1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="item1" data-flag="select">
+        section1
+    </div>
+    <div class="item1-content" data-content>
+        content1
+    </div>
+    <div class="item2" data-flag="select">
+        section2
+    </div>
+    <div class="item2-content" data-content>
+        content2
+    </div>
+    <div class="item3" data-flag="select">
+        section3
+    </div>
+    <div class="item3-content" data-content>
+        content3
+    </div>
+    <div class="item4" data-flag="select">
+        section4
+    </div>
+    <div class="item4-content" data-content>
+        content4
+    </div>
+</div>
+<script>
+    var titles = document.querySelectorAll("[data-flag=select]");
+    for(var i = 0; i < titles.length; i++){
+        titles[i].addEventListener("click"
+                ,function(e){
+                    var contents = document.querySelectorAll("[data-content]");
+                    contents.forEach(function(element){
+                        element.style.height = 0;
+                    });
+
+                    var current = e.currentTarget;
+                    var item = current.getAttribute("class");
+                    var content = item + "-content";
+                    var contentItem = document.getElementsByClassName(content)[0];
+                    contentItem.style.height = "300px";
+                });
+    }
+</script>
+</body>
+</html>
+
+
