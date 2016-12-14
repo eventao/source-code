@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Draggle</title>
+</head>
+<body>
+    <div id="dragContainer"
+         style="width:200px;height:200px;background-color:red;position:absolute;">
+    </div>
+    <script>
+        var container = document.getElementById("dragContainer");
+        var isMouseDown;
+        container.addEventListener("mousedown",function(e){
+            prePoint.x = e.pageX;
+            prePoint.y = e.pageY;
+            isMouseDown = true;
+        });
+
+        var prePoint = {};
+        container.addEventListener("mousemove",function(e){
+            if(isMouseDown){
+                var deltaPoint = {
+                    x:e.pageX - prePoint.x,
+                    y:e.pageY - prePoint.y
+                };
+                container.style.top = (container.offsetTop + deltaPoint.y) + "px";
+                container.style.left = (container.offsetLeft + deltaPoint.x) + "px";
+            }
+            prePoint.x = e.pageX;
+            prePoint.y = e.pageY;
+        });
+        container.addEventListener("mouseup",function(e){
+            isMouseDown = false;
+        });
+
+    </script>
+</body>
+</html>
