@@ -12,8 +12,9 @@
 
 <script>
     var compatible = document.getElementById("compatible");
-    listen(compatible,"click",function(){
-        alert("我是兼容性事件监听！");
+    listen(compatible,"click",function(e){
+//        alert("我是兼容性事件监听！");
+        alert(e.button);
     });
 
     function listen(selector,eventString,fn){
