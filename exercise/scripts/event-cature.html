@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件捕获</title>
+    <script>
+        window.addEventListener("load",function(){
+            var button = document.querySelector("input");
+            button.addEventListener("click",function(e){
+                alert(e.currentTarget.offsetLeft);
+            },true);
+        });
+
+    </script>
+</head>
+<body>
+<input type="button" value="点我啊" >
+</body>
+</html>
+
