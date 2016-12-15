@@ -5,12 +5,147 @@
     <title>javascript-数组</title>
 </head>
 <body>
-<h1>基本数据类型</h1>
-string<br>  number<br>   undefined<br>    null<br>  bool<br>  object<br>
-<h1>js内置对象(函数)</h1>
-String  Number  Array
+<!--<h1>基本数据类型</h1>-->
+<!--string<br>  number<br>   undefined<br>    null<br>  bool<br>  object<br>-->
+<!--<h1>js内置对象(函数)</h1>-->
+<!--String  Number  Array-->
 
 <script>
+    var filterA = [1, 2, 3, 4, 5];
+    var small = filterA.filter(function (x) {
+        return x < 3;
+    });
+    document.write(small);
+    document.write("<br>");
+    var other = filterA.filter(function (x, i) {
+        return i % 2 == 0;
+    });
+    document.write(other);
+    document.write("<br>");
+
+
+    var forEeachArray = [100, 200, 300, 400, 500, 600, 700];
+    forEeachArray.forEach(function (x) {
+        document.writeln(x);
+    });
+    document.write("<br>");
+
+    var mapArray = [100, 200, 300, 400, 500, 600, 700];
+    var newMap = mapArray.map(function (x) {
+        document.writeln(x);
+        return x > 300 ? 1 : 0;
+    });
+    document.write("<br>");
+    document.write(newMap);
+    document.write("<br>");
+
+
+    var pushArray = ["a", "b", "c", "d", "e", "f", "g"];
+    document.write(pushArray);
+    pushArray.push(1);
+    document.write("<br>push后：");
+    document.write(pushArray);
+    document.write("<br>");
+
+
+    var unshiftArray = ["a", "b", "c", "d", "e", "f", "g"];
+    document.write(unshiftArray);
+    unshiftArray.unshift(1);
+    document.write("<br>unshift后：");
+    document.write(unshiftArray);
+    document.write("<br>");
+
+
+    var shiftArray = ["a", "b", "c", "d", "e", "f", "g"];
+    document.write(shiftArray);
+    shiftArray.shift();
+    document.write("<br>shift后：");
+    document.write(shiftArray);
+    document.write("<br>");
+
+
+    var popArray = ["a", "b", "c", "d", "e", "f", "g"];
+    document.write(popArray);
+    popArray.pop();
+    document.write("<br>pop后：");
+    document.write(popArray);
+    document.write("<br>");
+
+
+    var aSlice = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+    for (var o = 0; o < aSlice.length; o++) {
+        var item = aSlice.slice(aSlice.length - (o + 1)
+                , aSlice.length - (o));
+        document.writeln(item[0]);
+    }
+    document.write("<br>");
+
+
+    var aConcat = ["h", "e", "l", "l", "o"];
+    var aConcat2 = ["w", "o", "r", "l", "d"];
+    var aConcat1 = ["------"];
+    var aConcat3 = aConcat.concat(aConcat2, aConcat1);
+    document.write(aConcat3);
+    document.write("<br>");
+
+
+    var source = "SsdlkDsdlfDsdlkfDdslf";
+    var re = source.toLowerCase();
+    document.write(source);
+    document.write("<br>");
+    document.write(re);
+
+
+    document.write("<br>");
+    var words = ["4ff", "1gg", "3dwed", "2dwe", "0.5fref"];
+    document.write(words);
+    document.write("<br>");
+    words.sort();
+    document.write(words);
+
+
+    document.write("<br>");
+
+    var str = "123";
+    document.write(str / 1);
+
+
+    var a = 1;
+    var b = "2";
+    var c = 3;
+    var output1 = a + b + c;
+    var output2 = a + c + b;
+    document.write(output1);
+    document.write("<br>");
+    document.write(output2);
+    document.write("<br>");
+
+
+    var aJoin = ["h", "e", "l", "l", "o", " w", "o", "r", "l", "d"];
+    var result = aJoin.join("|");
+    document.write(result);
+
+    document.write("<br>");
+    var aSplit = result.split("|");
+    document.write(aSplit);
+
+    document.write("<br>");
+    aSplit.reverse();
+    document.write(aSplit);
+
+
+    var a1 =
+            [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    for (var ia = 0; ia < a1.length / 2; ia++) {
+        var iValue = a1[ia];
+        var lIndex = a1.length - (ia + 1);
+        a1.splice(ia, 1, a1[lIndex]);
+        a1.splice(lIndex, 1, iValue);
+    }
+    console.log(a1);
+
+
     document.write("<h1>字符串声明</h1>");
     var strData = new String("data");
     console.log(strData);
@@ -36,22 +171,22 @@ String  Number  Array
 
     document.write("<h1>数组</h1>");
     document.write("<h2>数组定义</h2>");
-//    var array1 = new Array();
+    //    var array1 = new Array();
     var array1 = [];
     array1.push("123");
     array1.push(123);
     array1.push(true);
     array1.push(undefined);
     array1.push(null);
-    array1.push({title:"I'm a object."});
+    array1.push({title: "I'm a object."});
     document.write("<h2>数组遍历</h2>");
 
-    for(var i = 0; i < array1.length; i++){
+    for (var i = 0; i < array1.length; i++) {
         document.writeln(array1[i]);
     }
     document.write("<h3>数组遍历while</h3>");
     var i1 = 0;
-    while(i1 < array1.length){
+    while (i1 < array1.length) {
         document.writeln(array1[i1]);
         i1++;
     }
@@ -63,12 +198,11 @@ String  Number  Array
     document.write("<h3>do while遍历数组</h3>");
     var resultSplit = resultJoin.split("$");
     var iDoWhile = 0;
-    do{
+    do {
         document.writeln(resultSplit[iDoWhile]);
         iDoWhile++;
     }
-    while(iDoWhile < resultSplit.length);
-
+    while (iDoWhile < resultSplit.length);
 
 
 </script>
