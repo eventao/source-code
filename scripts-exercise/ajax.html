@@ -5,20 +5,42 @@
     <title>ajax</title>
 </head>
 <body>
+<div id="dataContainer">
 
+</div>
 <script>
-    var xmlRequest = XMLHttpRequest;
+    var xmlRequest = null;
     if(window.XMLHttpRequest){
         xmlRequest = new XMLHttpRequest();
     }else if(window.ActiveXObject){
         xmlRequest = new new ActiveXObject("Microsoft.XMLHTTP");
     }
     if(xmlRequest){
+        var container = document.querySelector("#dataContainer");
         xmlRequest.onreadystatechange = function(even){
             if(xmlRequest.readyState == 4){
                 if(xmlRequest.status == 200){
-                    var data = JSON.parse(xmlRequest.responseText);
-                    console.log(data);
+                    var records = JSON.parse(xmlRequest.responseText);
+                    var data = records.data;
+                    var result = "";
+                    result += "<div>";
+                    result += "<span>&nbsp;姓名</span>";
+                    result += "<span>&nbsp;年龄</span>";
+                    result += "<span>&nbsp;性别</span>";
+                    result += "<span>&nbsp;兴趣</span>";
+                    result += "<span>&nbsp;标签</span>";
+                    result += "</div>";
+                    for(var i = 0; i < data.length;i++){
+                        var person = data[i];
+                        result += "<div>";
+                        result += "<span>&nbsp;"+person.title+"</span>";
+                        result += "<span>&nbsp;"+person.age+"</span>";
+                        result += "<span>&nbsp;"+person.gender+"</span>";
+                        result += "<span>&nbsp;"+person.favorite+"</span>";
+                        result += "<span>&nbsp;"+person.targets+"</span>";
+                        result += "</div>";
+                    }
+                    container.innerHTML = result;
                 }else{}
             }
             console.log("server retrieved " + xmlRequest.readyState + " " + xmlRequest.status);
