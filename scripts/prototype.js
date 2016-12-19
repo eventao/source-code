@@ -59,8 +59,6 @@ document.write(data);
 
 
 
-
-
 function Human(){
     this.height = 170;
     this.weight = 55;
