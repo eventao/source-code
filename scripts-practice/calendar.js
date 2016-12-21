@@ -3,8 +3,52 @@
  */
 (function(window){
     window.util = window.util || {};
-    util.calendar = function(selector){
+    util.calendar = function(selector,dateParam){
         var container = document.querySelector(selector);
+        var now = dateParam || new Date();
+        var year = now.getFullYear();
+        var month = now.getMonth() + 1;
+        (function appendToolbar(){
+            var toolBar = document.createElement("div");
+            toolBar.setAttribute("class","tool-bar");
+            var currentDate = document.createElement("span");
+            currentDate.innerText = year + "年"+month+"月" ;
+
+            var top = document.createElement("div");
+            top.innerText = "<";
+            top.setAttribute("class","top");
+            var down = document.createElement("div");
+            down.innerText = ">";
+            down.setAttribute("class","down");
+
+            function monthChange(flag){
+                var currMonth = now.getMonth();
+                if(flag){
+                    //向下
+                    now.setMonth(currMonth + 1);
+                    container.innerHTML = "";
+                    util.calendar(selector,now);
+                }else{
+                    //向上
+                    now.setMonth(currMonth - 1);
+                    container.innerHTML = "";
+                    util.calendar(selector,now);
+                }
+            }
+            top.addEventListener("click",function(){
+                monthChange(0);
+            });
+            down.addEventListener("click",function(){
+                monthChange(1);
+            });
+
+
+            toolBar.appendChild(currentDate);
+            toolBar.appendChild(top);
+            toolBar.appendChild(down);
+            container.appendChild(toolBar);
+        })();
+
         var day = ['一','二','三','四','五','六','日'];
        (function fillDay(){
             var dayRow = document.createElement("div");
@@ -18,10 +62,10 @@
         })();
 
        (function fillDate(){
-           var now = new Date();
+           var now = dateParam || new Date();
            var year = now.getFullYear();
            var month = now.getMonth()+1;
-           // var date = now.getDate();
+           var date = now.getDate();
            var firstDate = new Date(year+"-"+month+"-1");
            var firstDay = firstDate.getDay();
 
@@ -33,6 +77,9 @@
                 var tempMonth = firstDate.getMonth();
                 if(tempMonth + 1 != month){
                     dateEle.setAttribute("class","date-container next");
+                }
+                if(firstDate.getDate() == date){
+                    dateEle.setAttribute("class","date-container today");
                 }
                 if(i >　firstDay-2){
                     dateEle.innerText = firstDate.getDate();

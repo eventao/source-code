@@ -22,4 +22,16 @@
 .container.calendar .date-container.next{
     color:#aaa;
 }
+.date-container.today{
+    background-color:#00f;
+}
+.top,.down{
+    width:20px;
+    height:30px;
+    transform:rotate(90deg);
+    cursor:pointer;
+}
+.tool-bar{
+    justify-content:flex-end;
+}
 
