@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>地址选择</title>
+
+</head>
+<body>
+
+<div>
+    <label for="province">省</label>
+    <select name="province" id="province"></select>
+    <label for="city">市</label>
+    <select name="city" id="city"></select>
+    <label for="district">区县</label>
+    <select name="district" id="district"></select>
+</div>
+
+<script src="province.js"></script>
+<script>
+    var province = document.querySelector("#province");
+    var provinces = window.util.provinces;
+    var op = document.createElement("option");
+    op.value = "";
+    op.text = "请选择省份";
+    province.appendChild(op);
+    provinces.forEach(function(p){
+        op = document.createElement("option");
+        op.value = p.ProID;
+        op.text = p.name;
+        province.appendChild(op);
+    });
+
+    var cityEle = document.querySelector("#city");
+    op = document.createElement("option");
+    op.value = "";
+    op.text = "请选择市";
+    cityEle.appendChild(op);
+    province.addEventListener("change",function(){
+        cityEle.innerHTML = "";
+        op = document.createElement("option");
+        op.value = "";
+        op.text = "请选择市";
+        cityEle.appendChild(op);
+
+        districtEle.innerHTML = "";
+        op = document.createElement("option");
+        op.value = "";
+        op.text = "请选择区县";
+        districtEle.appendChild(op);
+
+        var proId = province.value;
+        var cities = window.util.cities;
+        cities.forEach(function(city){
+            if(city.ProID == proId){
+                op = document.createElement("option");
+                op.value = city.CityID;
+                op.text = city.name;
+                cityEle.appendChild(op);
+            }
+        });
+    });
+
+    var districtEle = document.querySelector("#district");
+    op = document.createElement("option");
+    op.value = "";
+    op.text = "请选择区县";
+    districtEle.appendChild(op);
+    cityEle.addEventListener("change",function(){
+        districtEle.innerHTML = "";
+        op = document.createElement("option");
+        op.value = "";
+        op.text = "请选择区县";
+        districtEle.appendChild(op);
+        var cityId = cityEle.value;
+        var districts = window.util.district;
+        districts.forEach(function(district){
+            if(district.CityID == cityId){
+                var op = document.createElement("option");
+                op.value = district.Id;
+                op.text = district.DisName;
+                districtEle.appendChild(op);
+            }
+        });
+
+    });
+</script>
+
+</body>
+</html>

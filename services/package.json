@@ -1,0 +1,9 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "devDependencies": {
+    "connect-busboy": "0.0.2",
+    "express": "^4.14.0",
+    "fs-extra": "^1.0.0"
+  }
+}

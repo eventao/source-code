@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xhr2</title>
+</head>
+<body>
+<form action="http://127.0.0.1:8004/upload" method="post">
+    <div>
+        <label for="uploadControl">请上传图片</label>
+        <input type="file" name="file" id="uploadControl">
+    </div>
+    <div style="width:500px;height:20px;background-color:#ccc;border-radius:30px;">
+        <div id="effict"
+             style="color:#fff;text-align:center;width:0;height:100%;background-color:#00a1cb;border-radius:30px;">
+        </div>
+    </div>
+    <div>
+        <input type="submit" id="subButton" title="提交数据">
+    </div>
+</form>
+<script>
+    var form = document.querySelector("form");
+    var uploadControl = document.querySelector("#uploadControl");
+    var m = form.getAttribute("method");
+    var ac = form.getAttribute("action");
+    form.addEventListener('submit',function(e){
+        e.preventDefault();
+        var xhr = new XMLHttpRequest();
+        xhr.upload.onprogress = uploadProgress;
+        xhr.onreadystatechange = function(e){};
+        var formData = new FormData(form);
+        formData.append('files[]',uploadControl);
+        xhr.open(m,ac,true);
+        xhr.send(formData);
+        return false;
+    });
+    var effict = document.querySelector("#effict");
+    /**
+     * 文件上传进度事件
+     * @param e1
+     */
+    function uploadProgress(e1){
+        if (e1.lengthComputable) {
+            var percent = e1.loaded / e1.total;
+            var r = (percent * 100).toFixed(2);
+            effict.innerText = r+"%";
+            effict.style.width = r+"%";
+        }
+    }
+</script>
+
+</body>
+</html>
