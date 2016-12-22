@@ -1,4 +1,5 @@
-* Created by yuant on 2016/12/21.
+/**
+ * Created by forli on 2016/12/21.
  */
 (function(window){
     window.util = window.util || {};
