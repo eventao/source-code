@@ -1,0 +1,37 @@
+.container.calendar{
+    width: 230px;
+    height:500px;
+    background-color:#000;
+    color:#fff;
+}
+
+.container.calendar > div{
+    display:flex;
+    flex-wrap: wrap;
+    align-content:space-between;
+}
+.container.calendar .date-container{
+    width:20px;
+    height:20px;
+    line-height:20px;
+    text-align:center;
+    flex-grow:10;
+    margin-right:10px;
+    margin-top:10px;
+}
+.container.calendar .date-container.next{
+    color:#aaa;
+}
+.date-container.today{
+    background-color:#00f;
+}
+.top,.down{
+    width:20px;
+    height:30px;
+    transform:rotate(90deg);
+    cursor:pointer;
+}
+.tool-bar{
+    justify-content:flex-end;
+}
+
