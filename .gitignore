@@ -3,3 +3,6 @@
 /services/.idea
 /services/node_modules
 /services/uploadFile
+/services-across/node_modules
+/services-across/.idea
+/services-across/uploadFile
