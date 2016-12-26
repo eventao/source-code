@@ -6,7 +6,7 @@ var express = require('express');
 var app = express();
 app.use('/',express.static(__dirname));
 
-var port = 8002;
+var port = 8888;
 app.listen(port);
 console.log("server is listening " + port);
 
