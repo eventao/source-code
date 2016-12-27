@@ -6,32 +6,17 @@ body{
     line-height:30px;
     text-align:center;
 }
-.container{
-    color:blue;
-}
-div{
-    color:black;
-}
-#childElement{
-    color:#7db500;
-}
-/*#sibling{*/
+/*.container{*/
+    /*color:blue;*/
+/*}*/
+/*div{*/
+    /*color:black;*/
+/*}*/
+/*#childElement{*/
     /*color:#7db500;*/
 /*}*/
-.container > div{
-    color:#00a1cb;
-}
-[id=childElement]{
-    color:gray;
-}
-.child-element{
-     color:orange;
-}
-div div{
-    color:purple;
-}
-/*div{*/
-    /*color:black !important;*/
+/*#sibling{*/
+    /*color:#7db500;*/
 /*}*/
 .child-element + div{
     color:lightgreen;
@@ -39,6 +24,23 @@ div div{
 .child-element ~ div{
     color:lightskyblue;
 }
+.container > div{
+    color:#00a1cb;
+}
+
+/*[id=childElement]{*/
+    /*color:gray;*/
+/*}*/
+/*.child-element{*/
+     /*color:orange;*/
+/*}*/
+/*div div{*/
+    /*color:purple;*/
+/*}*/
+/*div{*/
+    /*color:black !important;*/
+/*}*/
+
 
 
 
