@@ -1,0 +1,46 @@
+body{
+    color:blue;
+    font-family:华文彩云;
+    font-size:40px;
+    font-weight:900;
+    line-height:30px;
+    text-align:center;
+}
+.container{
+    color:blue;
+}
+div{
+    color:black;
+}
+#childElement{
+    color:#7db500;
+}
+/*#sibling{*/
+    /*color:#7db500;*/
+/*}*/
+.container > div{
+    color:#00a1cb;
+}
+[id=childElement]{
+    color:gray;
+}
+.child-element{
+     color:orange;
+}
+div div{
+    color:purple;
+}
+/*div{*/
+    /*color:black !important;*/
+/*}*/
+.child-element + div{
+    color:lightgreen;
+}
+.child-element ~ div{
+    color:lightskyblue;
+}
+
+
+
+
+

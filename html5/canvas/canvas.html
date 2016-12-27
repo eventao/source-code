@@ -35,9 +35,10 @@
 
     var interval;
     function startFn(){
+        clearInterval(interval);
         interval = setInterval(function(){
             draw(180);
-        },10);
+        },5);
     }
     function stopFn(){
         clearInterval(interval);
