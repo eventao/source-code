@@ -3,53 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Ajax</title>
+    <link rel="stylesheet" href="../style/ajax20161228.css">
 </head>
 <body>
 
 <input type="button" id="dataAccept" value="数据访问">
+<div id="dataContainer">
 
-<script>
-    function ajaxFn(url,method,option,callback){
-        var ajax = null;
-        if(window.XMLHttpRequest){
-            ajax = new XMLHttpRequest();
-        }else if(window.ActiveXObject){
-            ajax = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        if(ajax){
-            ajax.onreadystatechange = function(){
-                switch(ajax.readyState){
-                    case 4:
-                        var result = {};
-                        if(ajax.status == 200){
-                            result.content = ajax.responseText;
-                        }
-                        result.status = ajax.status;
-                        callback(result);
-                        break;
-                    case 3:
-                        break;
-                    case 2:
-                        break;
-                    case 1:
-                        break;
-                }
-            };
-            ajax.open(method ? method:"get",url,true);
-            ajax.send(option);
-        }
-    }
-    var dataAccept = document.getElementById("dataAccept");
-    var handle = function(){
-        ajaxFn("../xmlHttpRequest","post",null,function(flag){
-            alert(flag.status);
-        });
-    };
-    if(dataAccept.addEventListener){
-        dataAccept.addEventListener("click",handle);
-    }else{
-        dataAccept.onclick = handle;
-    }
-</script>
+</div>
+<script src="../scripts/ajax20161228.js"></script>
+
 </body>
 </html>
