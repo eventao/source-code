@@ -25,7 +25,8 @@ app.route('/upload')
             file.pipe(fstream);
             fstream.on('close', function () {
                 console.log("Upload Finished of " + filename);
-                res.redirect('back');
+                // res.redirect('back');
+                res.json({status:0,message:"文件上传成功！"});
             });
         });
     });
