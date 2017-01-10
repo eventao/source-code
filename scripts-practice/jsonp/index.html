@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function jsonP(){
+        var sTarget = document.createElement("script");
+        sTarget.src = "http:localhost:8050/cross-by-jsonp?callback=callbackHandle";
+        document.body.appendChild(sTarget);
+    }
+    function callbackHandle(data){
+
+    }
+
+
+    var data = {"name":"name123"};
+    res.write("callbackHandle('"+JSON.stringify(data)+ "')");
+
+</script>
+
+</body>
+</html>

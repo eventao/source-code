@@ -30,6 +30,7 @@
         e.preventDefault();
         var xhr = new XMLHttpRequest();
         xhr.upload.onprogress = uploadProgress;
+        xhr.upload.onloadend = uploadEndHandle;
         xhr.onreadystatechange = function(e){};
         var formData = new FormData(form);
         formData.append('files[]',uploadControl);
@@ -38,6 +39,11 @@
         return false;
     });
     var effict = document.querySelector("#effict");
+
+    function uploadEndHandle(){
+        alert("恭喜你，文件上传成功！");
+    }
+
     /**
      * 文件上传进度事件
      * @param e1

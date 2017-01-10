@@ -15,21 +15,23 @@ app.all('*', function(req, res, next) {
     res.header("Content-Type", "application/json;charset=utf-8");
     next();
 });
-
-app.route('/upload')
-    .post(function (req, res, next) {
-        var fstream;
-        req.pipe(req.busboy);
-        req.busboy.on('file', function (fieldname, file, filename) {
-            fstream = fs.createWriteStream(__dirname + '/uploadFile/' + filename);
-            file.pipe(fstream);
-            fstream.on('close', function () {
-                console.log("Upload Finished of " + filename);
-                // res.redirect('back');
-                res.json({status:0,message:"文件上传成功！"});
-            });
+var router = express.Router();
+router.post('/upload',function (req, res, next) {
+    var fstream;
+    req.pipe(req.busboy);
+    req.busboy.on('file', function (fieldname, file, filename) {
+        fstream = fs.createWriteStream(__dirname + '/uploadFile/' + filename);
+        file.pipe(fstream);
+        fstream.on('close', function () {
+            console.log("Upload Finished of " + filename);
+            // res.redirect('back');
+            res.json({status:0,message:"文件上传成功！"});
         });
     });
+});
+
+app.use('/',router);
+
 var port = 8004;
 app.listen(port,function(){
     console.log("Server running at "+port);

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="跨域请求" onclick="requestCross()" >
+
+<script>
+    function requestCross(){
+        var s = document.createElement('script');
+        s.src = "http://localhost:8050/jsonpData?callback=cbHandle";
+        document.body.appendChild(s);
+    }
+    function cbHandle(data){
+        alert(data.title);
+    }
+</script>
+
+</body>
+</html>
