@@ -9,18 +9,31 @@
 <script src="../node_modules/jquery/dist/jquery.js"></script>
 <script>
     $(function(){
+
         var dragging = {};
 
-        function handle(){
+        function handle(param){
             var div = $("<div></div>");
             $("body").append(div);
-            div.css("width","400px");
+            div.css("width",param?param.width:400+"px");
             div.css({
-                height:"300px",
+                height:param?param.height:300+"px",
                 "background-color":"yellow",
                 border:"1px solid #000",
                 position:"absolute"
             });
+            if(param){
+                div.css({
+                    left:param.left+"px",
+                    top:param.top+"px"
+                })
+            }
+            if(param){
+                div.css({
+                    left:param.left+"px",
+                    top:param.top+"px"
+                })
+            }
 
             div.mousedown(function(e){
                 e.preventDefault();
@@ -63,11 +76,16 @@
             addPin(null,"-2px",null,"-2px","sw-resize");
             addPin("50%","-2px",null,null,"w-resize");
         }
-        handle();
-        handle();
-        handle();
-        handle();
-        handle();
+        var d = window.localStorage.getItem("elements");
+        if(d){
+            d = JSON.parse(d);
+            for(var j = 0;j < d.length;j++)
+                handle(d[j]);
+        }else{
+            for(var i = 0; i < 5; i++)
+                handle();
+        }
+
         $(document).mousemove(function(e){
             if(dragging.prePoi){
                 var subX = e.pageX - dragging.prePoi.x;
@@ -130,6 +148,21 @@
             };
         }).mouseup(function(){
             dragging.jqObj = null;
+
+            var data = [];
+            var jqEles = $("body > div");
+            jqEles.each(function(){
+                var single = $(this);
+                data.push({
+                    width:single.width(),
+                    height:single.height(),
+                    left:single.offset().left,
+                    top:single.offset().top
+                });
+            });
+            window.localStorage.setItem("elements",JSON.stringify(data));
+
+
         });
 
     });

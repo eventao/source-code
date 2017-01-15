@@ -75,13 +75,13 @@ var content = {
     ]
 };
 
-var sLength = content.data.length;  
-for(var i = 0; i < 500;i++){
-    for(var j = 0; j < sLength; j++){
+var sLength = content.data.length;
+for (var i = 0; i < 500; i++) {
+    for (var j = 0; j < sLength; j++) {
         var stu = {};
         var s = content.data[j];
-        for(var k in s){
-            if(s.hasOwnProperty(k)){
+        for (var k in s) {
+            if (s.hasOwnProperty(k)) {
                 stu[k] = s[k];
             }
         }
@@ -136,7 +136,7 @@ function operation() {
             var c = $(this).val();
             var pro = $(this).siblings("select");
             var p = pro.val();
-            $(this).parent().append("<div>"+ p + "/" + c+"</div>");
+            $(this).parent().append("<div>" + p + "/" + c + "</div>");
             pro.remove();
             $(this).remove();
         });
@@ -162,12 +162,12 @@ function operation() {
 }
 operation();
 
-function pager(){
+function pager() {
     var pNumber = $(".page-number");
     var p = Math.ceil(content.dataTotal / content.pageSize);
     var pTotal = 5;
-    for(var i = 0; i < pTotal; i++){
-        pNumber.append("<div>"+(i + 1)+"</div>");
+    for (var i = 0; i < pTotal; i++) {
+        pNumber.append("<div>" + (i + 1) + "</div>");
     }
     $(".ellipsis2").remove();
     pNumber.after("<div class='ellipsis2'>...</div>");
@@ -177,9 +177,9 @@ pager();
 
 var currentPage = 1;
 var stepChange = 5;
-function pagerNumberEvent(){
+function pagerNumberEvent() {
     var pNumber = $(".page-number");
-    pNumber.find("div").click(function(){
+    pNumber.find("div").click(function () {
         currentPage = $(this).text();
         currentPage = Number(currentPage);
         renderData(currentPage);
@@ -187,7 +187,7 @@ function pagerNumberEvent(){
         $(this).addClass("current");
     });
 
-    $(".ellipsis2").click(function(){
+    $(".ellipsis2").click(function () {
         currentPage += stepChange;
         var min = currentPage - (stepChange);
         var max = currentPage + (stepChange - 1);
@@ -195,8 +195,8 @@ function pagerNumberEvent(){
         pNumber.html("");
         $(".ellipsis1").remove();
         pNumber.before("<div class='ellipsis1'>...</div>");
-        for(var i = min; i < max;i++){
-            pNumber.append("<div>"+(i + 1)+"</div>");
+        for (var i = min; i < max; i++) {
+            pNumber.append("<div>" + (i + 1) + "</div>");
         }
         $(".ellipsis2").remove();
         pNumber.after("<div class='ellipsis2'>...</div>");
@@ -205,34 +205,34 @@ function pagerNumberEvent(){
         pagerNumberEvent();
     });
 
-    $(".ellipsis1").click(function(){
-        var min,max;
-        if(currentPage < stepChange + 1){
+    $(".ellipsis1").click(function () {
+        var min, max;
+        if (currentPage < stepChange + 1) {
             min = 0;
             max = stepChange;
-        }else if(currentPage == stepChange + 1){
+        } else if (currentPage == stepChange + 1) {
             currentPage -= stepChange;
             min = 0;
             max = currentPage + (stepChange - 1);
-        }else{
+        } else {
             currentPage -= stepChange;
             min = currentPage - stepChange;
             max = currentPage + (stepChange - 1);
         }
         var pNumber = $(".page-number");
         pNumber.html("");
-        if(currentPage >= stepChange + 1){
+        if (currentPage >= stepChange + 1) {
             $(".ellipsis1").remove();
             pNumber.before("<div class='ellipsis1'>...</div>");
         }
-        for(var i = min; i < max;i++){
-            pNumber.append("<div>"+(i + 1)+"</div>");
+        for (var i = min; i < max; i++) {
+            pNumber.append("<div>" + (i + 1) + "</div>");
         }
         $(".ellipsis2").remove();
         pNumber.after("<div class='ellipsis2'>...</div>");
-        if(currentPage >= stepChange + 1){
+        if (currentPage >= stepChange + 1) {
             pNumber.find("div").eq(5).addClass("current");
-        }else{
+        } else {
             pNumber.find("div").eq(0).addClass("current");
         }
         renderData(currentPage);
@@ -244,43 +244,49 @@ pagerNumberEvent();
 
 var rows = $(".container .row");
 var dragging = {};
-function dragHandle(){
-    $(".drag-handle").mousedown(function(e){
+function dragHandle() {
+    $(".drag-handle").mousedown(function (e) {
         e.preventDefault();
         rows = $(".container .row");
         dragging.handle = $(this);
         dragging.handleIndex =
-         $(".drag-handle").index($(this));
+            $(".drag-handle").index($(this));
         dragging.group = [];
-        rows.each(function(){
-            var cols = $(this).find(".column");
+        rows.each(function () {
+            var cols = $(this).children(".column");
             var l = cols.eq(dragging.handleIndex);
             var r = cols.eq(dragging.handleIndex + 1);
             dragging.group.push({
-                l:l,
-                r:r
+                l: l,
+                r: r
             });
         });
     });
-    $(document).mousemove(function(e){
-        if(dragging.prePoi){
+    $(document).mousemove(function (e) {
+        if (dragging.prePoi) {
             var subX = e.pageX - dragging.prePoi.x;
-            if(dragging.handle){
+            if (dragging.handle) {
                 var p = dragging.handle.parent();
                 var w = p.width();
                 var p0 = p.prev();
                 var w0 = p0.width();
                 p0.width(w0 + subX);
                 p.width(w - subX);
-                dragging.group.forEach(function(o){
+                dragging.group.forEach(function (o) {
                     o.l.width(o.l.width() + subX);
                     o.r.width(o.r.width() - subX);
                 });
             }
         }
-        dragging.prePoi = {x:e.pageX,y:e.pageY};
-    }).mouseup(function(){
+        dragging.prePoi = {x: e.pageX, y: e.pageY};
+    }).mouseup(function () {
         dragging.handle = null;
     });
 }
 dragHandle();
+
+
+
+
+
+
