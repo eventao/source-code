@@ -3,15 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>相册</title>
-
+    <link rel="stylesheet" href="../../jquery-dev/plugin/plugin.css">
 </head>
 <body>
-<div class="container">
-
+<div class="container gallery">
+    <div class="target"></div>
+    <img src="images/d1.jpg" class="main" alt="产品">
+    <div class="enlarged">
+        <img src="images/d2.jpg" alt="放大">
+    </div>
+    <div class="bar">
+        <img data-f="d" src="images/d1.jpg" class="current" alt="缩略">
+        <img data-f="p" src="images/p1.jpg" alt="缩略">
+        <img data-f="q" src="images/q1.jpg" alt="缩略">
+        <img data-f="s" src="images/s1.jpg" alt="缩略">
+    </div>
 </div>
-
-<link rel="stylesheet" href="../../jquery-dev/plugin/plugin.css">
 <script src="../../node_modules/jquery/dist/jquery.js"></script>
 <script src="../../jquery-dev/plugin/gallery.js"></script>
+<script>
+    $(".container.gallery").gallery();
+</script>
 </body>
 </html>
