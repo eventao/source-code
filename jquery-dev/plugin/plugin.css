@@ -14,21 +14,20 @@ body{
 }
 .container.gallery > .bar{
     width:100%;
-    height: 170px;
+    height: 120px;
     position:absolute;
-    bottom:-175px;
+    bottom:-120px;
     left:0;
-    background-color:gray;
     display:flex;
     justify-content:space-around;
     align-items:center;
 }
 .container.gallery > .bar > img{
-    width:100px;
-    border:3px solid rgba(0,0,0,0);
+    width:80px;
+    border:2px solid rgba(0,0,0,0);
 }
 .container.gallery > .bar > img.current{
-    border:3px solid rgba(0,0,0,0.8);
+    border:2px solid rgba(0,0,0,1);
 }
 .container.gallery > img{
     width:100%;
