@@ -1,3 +1,6 @@
+html{
+    background-color:#FF7E31;
+}
 body {
     padding: 0;
     margin: 0;
@@ -18,7 +21,7 @@ a{
 
 header {
     width: 100%;
-    height: 400px;
+    height: 261px;
     background-color: #FF7E31;
 }
 
@@ -95,6 +98,11 @@ header .title .message .icon{
     margin:0 auto;
     padding-top:25px;
 }
+.main:after{
+    content:" ";
+    clear:both;
+    display:block;
+}
 .main .logo{
     width: 211px;
     height: 138px;
@@ -102,12 +110,83 @@ header .title .message .icon{
     float:left;
 }
 .search-container{
-    width: 400px;
-    height:auto;
-    float:left;
+    width: 500px;
+    height: 70px;
+    float: left;
+    margin-left: 110px;
+    margin-top: 8px;
+}
+.search-container > div{
+    width:100%;
+    height:40%;
+}
+.search-container > div:nth-child(2){
+    border:#6500A2 3px solid;
+    height:60%;
+}
+.tab-title:hover{
+    background-color:#D999FF;
 }
 .tab-title{
     width:50px;
-    height:25px;
+    height:100%;
     float:left;
+    color:#6500A2;
+    cursor:pointer;
+    text-align:center;
+    line-height:2;
+    font-size:14px;
+}
+.tab-title:first-child{
+    background-color:#6500A2;
+    color:#fff;
+}
+.search-container .search{
+    border:none;
+    height:100%;
+    display:block;
+    background-color:#FF7E31;
+    float:left;
+    padding-left:5px;
+    width:380px;
+    font-size:14px;
+}
+.search-container .search:focus{
+    outline:none;
+}
+.search-container .button{
+    display:block;
+    float:right;
+    background-color:#6500A2;
+    border:none;
+    height:100%;
+    color:#fff;
+    width: 113px;
+    cursor:pointer;
+}
+.search-container .button:focus{
+    outline:none;
+}
+.search-container .button:hover{
+    background-color:#6B00AC;
+}
+.app-scan{
+    width:141px;
+    height:156px;
+    float:right;
+    margin:8px 0 0 20px;
+    background: url(images/spirte.png) -290px -0px;
+}
+.content{
+    width:80%;
+    margin:0 auto;
+    height: auto;
+    background-color:#FF7E31;
+}
+.content h1{
+    color:#BF4800;
+}
+.content > .gallery img{
+    width:256px;
+    margin-right:10px;
 }
