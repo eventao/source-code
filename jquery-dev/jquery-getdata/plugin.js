@@ -17,6 +17,13 @@
                         param.error(error);
                     }
                 });
+
+                // $.post();
+                // $.get();
+                // $.getJSON();
+                // $.JSONP();
+
+
             };
 
             var render = function (data) {

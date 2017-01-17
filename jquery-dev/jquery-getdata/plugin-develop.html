@@ -11,6 +11,15 @@
 <script src="../../node_modules/jquery/dist/jquery.js"></script>
 <script src="plugin.js"></script>
 <script>
+    function jsonpCallback(data){
+        alert(data.content.length);
+    }
+    function jsonP(){
+        var sc = document.createElement("script");
+        sc.setAttribute("src","/jsonpTest");
+        $("body").append(sc);
+    }
+    jsonP();
     $(".wrapper").student({});
 </script>
 </body>
