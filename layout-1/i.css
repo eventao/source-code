@@ -1,0 +1,103 @@
+body {
+    padding: 0;
+    margin: 0;
+    color:#fff;
+    font-family: "microsoft yahei", serif;
+}
+a{
+    color:#fff;
+    text-decoration: none;
+}
+* {
+    box-sizing: border-box;
+}
+.container {
+    width: 100%;
+    height: auto;
+}
+
+header {
+    width: 100%;
+    height: 400px;
+    background-color: #FF7E31;
+}
+
+header .title {
+    width:100%;
+    height:35px;
+    line-height:35px;
+    background-color: rgba(0, 0, 0, 0.4);
+    font-size:12px;
+    font-family:'宋体';
+}
+header .title .inner{
+    width:80%;
+    height:100%;
+    margin:0 auto;
+    position:relative;
+}
+header .title a{
+    color:#F7E1D5;
+    display:block;
+    float:left;
+    margin-right:40px;
+}
+header .title .secondary{
+    width:464px;
+    height:auto;
+    position:absolute;
+    top:0;
+    right:-40px;
+}
+header .title a:hover{
+    color:#fff;
+    text-decoration:underline;
+}
+header .title .message{
+    position:relative;
+}
+header .title .message .flag{
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: red;
+    color: #fff;
+    position: absolute;
+    top: 5px;
+    right: -11px;
+    font-size: 9px;
+    line-height: 1;
+    text-align: center;
+}
+header .title .message .icon{
+    width:16px;
+    height:14px;
+    background:url('images/spirte.png') -23px -17px;
+    position:absolute;
+    left:-18px;
+    top:13px;
+}
+.update-msg{
+    position:relative;
+}
+.up-flag{
+    width: 13px;
+    height: 7px;
+    position: absolute;
+    right: -17px;
+    top: 16px;
+    font-size: 9px;
+    background: url(images/spirte.png) -46px -19px;
+}
+.main{
+    width:80%;
+    height:auto;
+    margin:0 auto;
+    padding-top:25px;
+}
+.main .logo{
+    width: 211px;
+    height: 138px;
+    background: url(images/spirte.png) -68px 0;
+}
+

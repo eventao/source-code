@@ -9,21 +9,23 @@
             height: 400px;
             position: relative;
             background-color: gray;
-            border:1px solid #000;
+            border: 1px solid #000;
         }
+
         .dot {
             width: 30px;
             height: 30px;
             border-radius: 50%;
             border: 1px solid #000;
-            margin:170px auto 0 auto;
+            margin: 170px auto 0 auto;
         }
+
         .box {
             width: 10px;
             height: 10px;
             background-color: yellow;
-            position:absolute;
-            border-radius:50%;
+            position: absolute;
+            border-radius: 50%;
         }
     </style>
 </head>
@@ -40,20 +42,58 @@
         var b = dot.offset().top;
         var r = 160;
         var box = $(".box");
-        var i = 0;
-        function animate(){
-            if(i >= 60)
-                i = 0;
-            var hudu = (2 * Math.PI / 360) * 6 * i;
-            var X = a + Math.sin(hudu) * r;
-            var Y = b - Math.cos(hudu) * r;    //  注意此处是“-”号，因为我们要得到的Y是相对于（0,0）而言的。
-            box.css({
-                left:X,
-                top:Y
+        var points = [];
+
+        function animate() {
+            for (var i = 0; i < 60; i++) {
+                var hudu = (Math.PI / 180) * 6 * i;
+                var X = a + Math.sin(hudu) * r;
+                var Y = b - Math.cos(hudu) * r;    //  注意此处是“-”号，因为我们要得到的Y是相对于（0,0）而言的。
+                points.push({
+                    x: X,
+                    y: Y
+                });
+            }
+            box.offset({
+                left: points[0].x,
+                top: points[0].y
             });
-            i++;
-            setTimeout(animate,10);
+            var dragging = {};
+            box.mousedown(function (e) {
+                dragging.ele = $(this);
+            });
+            function near(l, t) {
+                var sR = [];
+                points.forEach(function (xx) {
+                    var rr = (xx.x - l)*(xx.x - l)+(xx.y - t)*(xx.y - t);
+                    rr = Math.SQRT2(rr);
+                    xx.sqr = rr;
+                    sR.push(xx);
+                });
+//                Math.max.call(null,);
+            }
+
+            $(document).mousemove(function (e) {
+                        if (dragging.ele) {
+                            var oSet = box.offset();
+                            var subX = e.pageX - dragging.x;
+                            var subY = e.pageY - dragging.y;
+                            var l = oSet.left + subX;
+                            var t = oSet.top + subY;
+                            var pp = near(l, t);
+                            box.offset({
+                                left: pp.x,
+                                top: pp.y
+                            });
+                        }
+                        dragging.x = e.pageX;
+                        dragging.y = e.pageY;
+                    })
+                    .mouseup(function () {
+                        dragging.ele = null;
+                    });
         }
+
         animate();
     })
 </script>
