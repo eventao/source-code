@@ -99,5 +99,10 @@ header .title .message .icon{
     width: 211px;
     height: 138px;
     background: url(images/spirte.png) -68px 0;
+    float:left;
 }
-
+.search-container{
+    width: 400px;
+    height:auto;
+    float:left;
+}
