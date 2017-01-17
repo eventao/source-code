@@ -106,3 +106,8 @@ header .title .message .icon{
     height:auto;
     float:left;
 }
+.tab-title{
+    width:50px;
+    height:25px;
+    float:left;
+}
