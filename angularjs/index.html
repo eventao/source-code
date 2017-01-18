@@ -5,11 +5,48 @@
     <title>angularjs</title>
 </head>
 <body>
-<div ng-app="TestModel">
-    <div ng-controller="TestController">
+<div ng-app="mainModel"
+     ng-controller="mainController">
 
+    <input ng-model="output"
+           type="text" title="input">
+    <div>{{output}}</div>
+    <div>当前时间为:
+        <span ng-bind="now"></span>
+        <span>{{::title}}</span>
     </div>
+
+    <div ng-model="obj">
+        {{obj.name}}
+    </div>
+
+    <br>
+    <div ng-repeat="student in students">{{student}}</div>
+    <hr>
+    <div>
+        <div>
+            <span>姓名&nbsp;&nbsp;</span>
+            <span>性别&nbsp;&nbsp;</span>
+            <span>职位&nbsp;&nbsp;</span>
+            <span>标签</span>
+        </div>
+        <div ng-repeat="t in teacher">
+            <span>{{t.name}}</span>
+            <span>&nbsp;&nbsp;{{t.gender}}</span>
+            <span>&nbsp;&nbsp;{{t.occupation}}</span>
+            <span>&nbsp;&nbsp;{{t.special}}</span>
+        </div>
+    </div>
+
+    <div ng-controller="childController">
+    </div>
+
+    <div ng-class="classContainer"
+            ng-style="containerStyle">
+    </div>
+
 </div>
-<script src="../angularjs/script.js"></script>
+<script src="../node_modules/angular/angular.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
