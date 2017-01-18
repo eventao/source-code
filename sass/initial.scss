@@ -1,0 +1,21 @@
+//sass style
+//------------------------------------------------------------
+//_variable.scss
+
+body{
+  font-family: $fontStack;
+  color: $primaryColor;
+}
+
+#main p {
+  color: $primaryColor;
+  width: 97%;
+
+  .redbox {
+    background-color: #ff0000;
+    color: #000000;
+  }
+}
+
+
+
