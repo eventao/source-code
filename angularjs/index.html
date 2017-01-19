@@ -8,6 +8,24 @@
 <div ng-app="mainModel"
      ng-controller="mainController">
 
+    <div class="structure">
+        <ul>
+            <li ng-repeat="r in roots">
+                {{r.name}}
+                <ul ng-repeat="c in r.children">
+                    <li>
+                        {{c.name}}
+                        <ul ng-repeat="gs in c.grandSons">
+                            <li>
+                                {{gs.name}}
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
     <input ng-model="output"
            type="text" title="input">
     <div>{{output}}</div>
