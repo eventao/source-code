@@ -8,6 +8,52 @@
 <div ng-app="mainModel"
      ng-controller="mainController">
 
+    <div>
+        <span>{{::"当前时间为"|prefix}}</span>
+    </div>
+
+    <div>
+        filter-filter
+        <ul>
+            <li ng-repeat="o in children | filter:{name:'皓'}">
+                {{o.name}}
+            </li>
+        </ul>
+    </div>
+
+
+    <div>
+        {{jsonObj | json}}
+    </div>
+
+    <div>
+        {{ stars | orderBy:'-age' }}
+    </div>
+
+    <div>
+        {{ ["f","e","b","a","c"] | orderBy }}
+            <br/>
+        {{ [12,4,6,3,6732,1,584,323,7] | orderBy }}
+    </div>
+
+    <div>
+        date-filter:
+        {{nowString | date:'yyyy-MM-dd HH:mm:ss:sss'}}
+    </div>
+
+    <div>
+        uppercase-filter:
+        {{uppercaseFilter | uppercase}}
+    </div>
+    <div>
+        currency-filter:
+        {{currencyFilter | currency:"€"}}
+    </div>
+    <div>
+        lowercase-filter:
+        {{lowercaseFilter}}
+    </div>
+
     <div class="structure">
         <ul>
             <li ng-repeat="r in roots">
@@ -16,7 +62,7 @@
                     <li>
                         {{c.name}}
                         <ul ng-repeat="gs in c.grandSons">
-                            <li>
+                            <li ng-class="itemClass">
                                 {{gs.name}}
                             </li>
                         </ul>
@@ -64,6 +110,15 @@
     </div>
 
 </div>
+
+<div id="secondary" ng-app="secondaryModel"
+     ng-controller="secondaryController">
+    <h1>第二个ng-app</h1>
+    <div>
+        {{title}}
+    </div>
+</div>
+
 <script src="../node_modules/angular/angular.js"></script>
 <script src="script.js"></script>
 </body>
