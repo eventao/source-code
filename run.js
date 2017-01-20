@@ -149,6 +149,13 @@ router.get("/jsonpTest", function (req, res) {
     res.end();
 });
 
+router.post("/userUpdate",function(req,res){
+    req.on("data",function(data){
+        res.write(data);
+        res.end();
+    });
+});
+
 app.use("/", router);
 
 var port = 8888;
