@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div id="container">
+    <div class="h-bar">
+        <div class="tool">
+            <span class="sign"></span>
+            <span class="time">20%</span>
+            <span class="bttery">
+                <span class="percent"></span>
+                <span class="plus"></span>
+            </span>
+            <span class="time">14:23</span>
+        </div>
+        <header>
+            <div class="header-inner">
+                <input type="text" title="请输入关键字" value="搜索职位/公司/商区">
+                <div class="scan"></div>
+            </div>
+        </header>
+    </div>
+    <div class="inner">
+        <div class="gallery-wrapper">
+            <div class="fresh-icon">
+            </div>
+            <div class="gallery">
+                <img src="images/gallery1.jpg" alt="相册1">
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../node_modules/jquery/dist/jquery.js"></script>
+<script src="index.js"></script>
+<script>
+    $("#container").scrollPanel();
+</script>
+
+</body>
+</html>

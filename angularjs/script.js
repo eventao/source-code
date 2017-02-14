@@ -102,6 +102,7 @@
         ["$scope", "$interval", "$rootScope", "DataFactory", "$filter"
             , function ($scope, $interval, $rootScope, service, $filter) {
 
+
             $scope.children = [
                 {
                     name: "齐皓",

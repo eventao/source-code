@@ -1,0 +1,21 @@
+<div style="width:400px;height:auto;border:1px solid red;color:black;">
+    <a href="{{link}}">{{linkText}}</a>
+
+    <p>
+        <input type="text" title="" ng-model="inputMsg">
+    </p>
+
+    <div>
+        <input ng-click="clicked()" type="button" value="指令内部按钮">
+    </div>
+
+    <div>
+        <select title="" ng-model="selected">
+            <option value="{{i.city}}"
+                    ng-repeat="i in sources">
+                {{i.city}}
+            </option>
+        </select>
+    </div>
+
+</div>

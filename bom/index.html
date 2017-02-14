@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="openChildWindow()">
+    打开子窗口
+</button>
+<div id="childMessage">
+
+</div>
+<a href="open-child.html" target="_blank">子窗口</a>
+<script>
+    function openChildWindow() {
+        var myWindow = window.open('', 'MyName', 'width=200,height=100');
+        myWindow.document.write("This is 'myWindow'");
+        myWindow.focus();
+        myWindow.opener.location = "http://www.baidu.com";
+//        myWindow.opener.document
+//                .querySelector("#childMessage")
+//                .innerText = "This is the parent window";
+        myWindow.close();
+
+    }
+
+    document.querySelector("a").onclick = function(){
+
+    }
+
+</script>
+</body>
+</html>

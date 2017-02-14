@@ -27,6 +27,8 @@
   },
   "devDependencies": {
     "angular": "^1.6.1",
+    "angular-route": "^1.6.1",
+    "angular-ui-router": "^0.4.2",
     "babel-cli": "^6.18.0",
     "babel-preset-es2015": "^6.18.0",
     "concurrently": "^2.0.0",
@@ -35,6 +37,9 @@
     "jqueryui": "^1.11.1",
     "lite-server": "^2.2.0",
     "postcss": "^5.2.10",
-    "postcss-import": "^9.1.0"
+    "postcss-import": "^9.1.0",
+    "reactjs": "^1.0.0",
+    "socket.io": "^1.7.2",
+    "ws": "^2.0.3"
   }
 }

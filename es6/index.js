@@ -6,7 +6,7 @@ class Animal{
         this.name = name;
     }
     sayName(){
-        console.log();
+        console.log(this.name);
     }
 }
 

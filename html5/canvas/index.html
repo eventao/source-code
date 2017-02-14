@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas</title>
+    <style>
+        #panel{
+            border:5px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="panel" width="600px" height="500px">
+    </canvas>
+    <script>
+        //获取Canvas对象(画布)
+        var canvas = document.getElementById("panel");
+        if(canvas.getContext){
+            //获取对应的CanvasRenderingContext2D对象(画笔)
+            var ctx = canvas.getContext("2d");
+            //开始一个新的绘制路径
+            ctx.beginPath();
+            //设置弧线的颜色为蓝色
+            ctx.strokeStyle = "red";
+            ctx.fillStyle = "blue";
+            var circle = {
+                x : 100,    //圆心的x轴坐标值
+                y : 100,    //圆心的y轴坐标值
+                r : 50      //圆的半径
+            };
+            //以canvas中的坐标点(100,100)为圆心，绘制一个半径为50px的圆形
+            ctx.arc(circle.x, circle.y, circle.r, 0, Math.PI * 2, true);
+            ctx.fill(); //结束渲染
+            //按照指定的路径绘制弧线
+            ctx.stroke();
+        }
+    </script>
+</body>
+</html>

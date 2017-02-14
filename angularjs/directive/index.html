@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-app="demo" ng-controller="demoController">
+
+<input type="text" title="" ng-model="outerInputMsg">
+
+<hello-world as-link="http://www.baidu.com"
+             as-link-text="百度"
+             clicked="clickedHandle()"
+             input-msg="outerInputMsg"
+             sources="resource"
+             selected="selected">
+</hello-world>
+
+<script src="../../node_modules/angular/angular.js"></script>
+<script src="hello-directive.js"></script>
+<script>
+    angular.module("demo", ["HelloModule"])
+            .controller("demoController", ["$scope",
+                function ($scope) {
+                    $scope.outerInputMsg = "I'm outer input msg";
+                    $scope.clickedHandle = function () {
+                        alert("指令内部点击！");
+                    };
+                    $scope.resource = [
+                        {
+                            city: "成都",
+                            id: 1,
+                            province: "四川"
+                        }, {
+                            city: "南充",
+                            id: 2,
+                            province: "四川"
+                        }, {
+                            city: "拉萨",
+                            id: 3,
+                            province: "西藏"
+                        }, {
+                            city: "桂林",
+                            id: 4,
+                            province: "广西"
+                        }, {
+                            city: "贵阳",
+                            id: 5,
+                            province: "贵州"
+                        }
+                    ];
+                    $scope.selected = $scope.resource[1].city;
+                    $scope.$watch("selected", function (n, o) {
+                        if (n != o) {
+                            alert(n);
+                        }
+                    });
+                }]);
+</script>
+</body>
+</html>

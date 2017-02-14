@@ -16,7 +16,7 @@ app.use('/', express.static(__dirname));
 // app.use('/',router);
 
 var router = express.Router();
-router.post("/students", function (req, res) {
+function studentsHandle(req, res){
     res.json([
         {
             name: "万茂",
@@ -139,7 +139,10 @@ router.post("/students", function (req, res) {
             weight: "86"
         }
     ]);
-});
+}
+router.post("/students",studentsHandle);
+router.get("/students",studentsHandle);
+
 router.get("/jsonpTest", function (req, res) {
     var data = {
         content: [1, 2, 2, 3, 4, 5, 6],

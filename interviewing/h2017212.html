@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+<input type="checkbox" id="checkBox1"> gogo
+<div style="width:300px;height:200px;border:5px solid darkslategray">
+    <div style="width:200px;height:130px;border:inherit;">
+
+    </div>
+</div>
+
+<!--行内元素不能包括块元素-->
+<div>
+    <span>
+        <div style="width:200px;height:100px;
+        background-color: red;"></div>
+    </span>
+
+    <span style="line-height: 60px;
+        margin:20px 20px;
+        background-color: red;">
+        行内元素的line-height
+    </span>
+
+</div>
+<script>
+
+    var a = 3;
+    function Output(a, b) {
+        console.log(this + a + b);
+    }
+    Output.call(a, 2,3);
+
+
+
+
+
+    //    3.javascript怎样选中一个checkbox，怎样设置它无效？
+    document.getElementById("checkBox1").disabled = false;
+
+
+    var source = "abcdace";
+    var split1 = source.substring(-2);//start,end
+    var split2 = source.substr(-3, 3);//start,length
+
+
+    var handles = [];
+    for (var i1 = 0; i1 < 10; i1++) {
+        handles.push(function () {
+            console.log(i1);
+        });
+    }
+    handles[4]();
+
+
+    var animal = {
+        name: "",
+        age: 0,
+        category: ""
+    };
+    var Human = function (favorite) {
+        this.favorite = favorite;
+    };
+    Human.prototype = animal;
+    var zyy = new Human("帅哥");
+
+    animal.name = "李涛";
+    Human.apply(animal, ["美女-apply"]);
+    var tom = new Human();
+
+    animal.name = "梅旭";
+    Human.call(animal, "美女-call");
+    var messi = new Human();
+
+    animal.name = "赵晨";
+    Human.bind(animal, "美女-bind", "美女-bind-2")();
+    var chenZhao = new Human();
+
+    var de = "debugger";
+</script>
+</body>
+</html>

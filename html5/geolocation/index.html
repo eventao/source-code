@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定位</title>
+</head>
+<body>
+<div id="container">
+
+</div>
+<script>
+    var i = 0;
+    function output(){
+        var ele = document.querySelector("#container");
+        ele.innerHTML = i;
+        i++;
+        setTimeout(output,1000);
+    }
+    output();
+
+
+
+
+    var parent = {
+        a: 1,
+        b: 2
+    };
+    function fun(a, b, c) {
+        this.title = "title";
+        return a * b * c;
+    }
+    fun.prototype = parent;
+    var o = new fun(1, 2, 3);
+    console.log(typeof o);
+    console.log(o);
+
+    function success(position) {
+        var container = document.querySelector("#container");
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        var result = {
+            lat: latitude,
+            lon: longitude
+        };
+        container.innerText = JSON.stringify(result);
+    }
+    navigator.geolocation.getCurrentPosition(success);
+</script>
+</body>
+</html>

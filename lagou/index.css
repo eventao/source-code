@@ -1,0 +1,129 @@
+@font-face {
+    font-family:'gloy';
+    src:url('../fonts/glyphicons-halflings-regular.woff2');
+}
+body{
+    margin:0;
+    padding:0;
+    font-family: '微软雅黑', 'gloy', serif;
+}
+
+*{
+    box-sizing:border-box;
+}
+#container{
+    /*max-width:1000px;*/
+    width:100vw;
+    height:100vh;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+
+#container .inner{
+    width:100vw;
+    height:800vh;
+    background-color:black;
+    color:#fff;
+    padding-top:1px;
+}
+
+header{
+    width: 100vw;
+    height: 9vh;
+}
+.header-inner{
+    width: 92vw;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #fff;
+    margin: 6vh auto 0 auto;
+}
+.h-bar{
+    width: 100vw;
+    height: 6vh;
+    background-color: #594161;
+    position: fixed;
+    z-index: 1;
+}
+.h-bar .tool{
+    width: 40vw;
+    height: 100%;
+    float: right;
+    color: #fff;
+    line-height: 6vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.h-bar .tool .sign:after{
+    content:'\e018';
+}
+.h-bar .tool .bttery{
+    display: inline-block;
+    width: 7.2vw;
+    height: 3vh;
+    border: 2px solid #fff;
+    border-radius: 3px;
+    line-height: 0;
+    position:relative;
+}
+.h-bar .tool .plus{
+    display: inline-block;
+    width: 9%;
+    height: 1vh;
+    background-color: #fff;
+    right: -4px;
+    top:3px;
+    position: absolute;
+}
+.h-bar .tool .bttery .percent{
+    width:20%;
+    height:100%;
+    display:inline-block;
+    background-color:#fff;
+}
+header input{
+    width: 78vw;
+    height: 5vh;
+    background-color: #fff;
+    border-radius: 6px;
+    display: block;
+    border:none;
+    text-align:center;
+    line-height:5vh;
+    color:#000;
+}
+header input:focus{
+    outline:none;
+}
+header .scan{
+    width: 25px;
+    height: 22px;
+}
+header .scan:after{
+    content:"\e115";
+}
+.gallery-wrapper{
+    margin-top:5vh;
+    height: 42vh;
+    position:relative;
+}
+.gallery{
+    height: 42vh;
+}
+.gallery img{
+    width:100%;
+    height:100%;
+}
+.fresh-icon{
+    width:0;
+    height: 0;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    bottom: 61%;
+    transition: zoom 1s;
+}
