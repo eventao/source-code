@@ -3,7 +3,7 @@
  */
 (function(){
     var ele = document.querySelector("#container");
-    var ws = new WebSocket('ws://localhost:8003');
+    var ws = new WebSocket('ws://localhost:8004');
     ws.onmessage = function(result){
         ele.innerText = result.data;
     }
