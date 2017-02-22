@@ -8,12 +8,8 @@ interface Person{
 }
 
 function greeter(person: Person){
-    return "Hello," + person;
+    return "Hello," + person.fullName;
 }
-// var user = "Jane User";
-// var user = { firstName: "Jane", lastName: "User" };
-var user = new Student("Jane", "M.", "User");
-document.body.innerHTML = greeter(user);
 
 class Student{
     fullName:string;
@@ -21,6 +17,8 @@ class Student{
         this.fullName = firstName + " " + middleInitial + " " + lastName;
     }
 }
+var user = new Student("Jane", "M.", "User");
+document.querySelector("#container").innerHTML = greeter(user);
 
 
 

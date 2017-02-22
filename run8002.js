@@ -65,6 +65,17 @@ router.get("/data-api",function(req,res){
         ]
     });
 });
+router.post("/items-data",function(req,res){
+    res.json([
+        {
+            title:"峨眉山"
+        },{
+            title:"青城山"
+        },{
+            title:"乐山"
+        }
+    ]);
+});
 app.use('/',router);
 
 
