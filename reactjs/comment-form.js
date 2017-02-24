@@ -23,6 +23,9 @@ var CommentForm = React.createClass({
         //清空界面输入框
         this.setState({author:"",text:""});
     },
+    clearHandle:function(e){
+        this.props.onClearHandle();
+    },
     render:function(){
         return(
             <form className="commentForm" onSubmit={this.handleSubmit}>
@@ -37,6 +40,7 @@ var CommentForm = React.createClass({
                        onChange={this.handleTextChange}
                 />
                 <input type="submit" value="Post" />
+                <input type="button" value="Clear" onClick={this.clearHandle} />
             </form>
         );
     }

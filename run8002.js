@@ -61,7 +61,7 @@ ws.on("connection", function (w) {
 var express = require('express');
 var app = express();
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.urlencoded({extended: false}));
 // parse application/json
 app.use(bodyParser.json());
 var port = 8002;
@@ -88,6 +88,7 @@ router.post("/items-data", function (req, res) {
 });
 router.get("/reactjs/sources/data.json",
     function (req, res) {
+
         var now = new Date();
         var nStr = [
             now.getHours(),
@@ -97,27 +98,41 @@ router.get("/reactjs/sources/data.json",
         ];
         nStr = nStr.join("-");
         global.jsonResult = global.jsonResult || [
-            {
-                id: 1,
-                author: "Pete Hunt(" + nStr + ")",
-                text: "This is one comment"
-            },
-            {
-                id: 2,
-                author: "Jordan Walke(" + nStr + ")",
-                text: "This is *another* comment"
-            }
-        ];
+                {
+                    id: 1,
+                    author: "Pete Hunt(" + nStr + ")",
+                    text: "This is one comment"
+                },
+                {
+                    id: 2,
+                    author: "Jordan Walke(" + nStr + ")",
+                    text: "This is *another* comment"
+                }
+            ];
+        if (req.query.clear == 1) {
+            global.jsonResult = [
+                    {
+                        id: 1,
+                        author: "Pete Hunt(" + nStr + ")",
+                        text: "This is one comment"
+                    },
+                    {
+                        id: 2,
+                        author: "Jordan Walke(" + nStr + ")",
+                        text: "This is *another* comment"
+                    }
+                ];
+        }
         res.json(global.jsonResult);
     });
 
 router.post("/reactjs/sources/data.json",
-    function(req,res){
-        if(req.body){
+    function (req, res) {
+        if (req.body) {
             global.jsonResult.push({
-                id:global.jsonResult.length + 1,
-                author:req.body.author,
-                text:req.body.text
+                id: global.jsonResult.length + 1,
+                author: req.body.author,
+                text: req.body.text
             });
             res.json(global.jsonResult);
         }
