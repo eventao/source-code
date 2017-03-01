@@ -1,21 +1,12 @@
 /**
  * Created by yuant on 2016/12/6.
  */
-var express = require('express');
+let express = require('express');
 // var solve = require('./server/solve-request-parameters');
-var app = express();
+let app = express();
 app.use('/', express.static(__dirname));
-// var router = express.Router();
-// router.post("/menu/list",function(req,res){
-//     req.on('data',function(data){
-//         var dataR = decodeURIComponent(data);
-//         var r = solve.solve(dataR);
-//         res.json(r);
-//     });
-// });
-// app.use('/',router);
 
-var router = express.Router();
+let router = express.Router();
 function studentsHandle(req, res){
     res.json([
         {
@@ -144,7 +135,7 @@ router.post("/students",studentsHandle);
 router.get("/students",studentsHandle);
 
 router.get("/jsonpTest", function (req, res) {
-    var data = {
+    let data = {
         content: [1, 2, 2, 3, 4, 5, 6],
         flag: true
     };
@@ -161,7 +152,7 @@ router.post("/userUpdate",function(req,res){
 
 app.use("/", router);
 
-var port = 8888;
+let port = 8888;
 app.listen(port);
 console.log("server is listening " + port);
 
