@@ -41,7 +41,9 @@
     "pomelo-logger": "^0.1.7",
     "postcss": "^5.2.10",
     "postcss-import": "^9.1.0",
+    "react-router": "^3.0.2",
     "reactjs": "^1.0.0",
+    "sequelize": "^3.30.2",
     "socket.io": "^1.7.2",
     "vue": "^2.1.10",
     "ws": "^2.0.3"

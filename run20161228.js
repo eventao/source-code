@@ -1,11 +1,13 @@
 /**
  * Created by forli on 2016/12/28.
  */
+var dataRouter = require('./services/router');
 var express = require('express');
 var app = express();
 app.use('/',express.static(__dirname));
 
 var router = express.Router();
+dataRouter.router(router);
 router.post("/xmlHttpRequest",function(req,res){
     var ajaxData = {
         goods:[

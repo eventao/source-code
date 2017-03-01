@@ -41,7 +41,7 @@
         },
         clearHandle:function(){
             $.ajax({
-                url:this.props.url+"?c lear=1",
+                url:this.props.url+"?clear=1",
                 type:'GET',
                 success:function(data){
                     this.setState({data:data});
@@ -56,7 +56,7 @@
             return (
                 <div class="commentBox">
                     <h1>Comments</h1>
-                    <CommentList data={this.state.data}></CommentList>
+                    <CommentList data={this.state.data} />
                     <CommentForm onCommentSubmit={this.handleCommentSubmit}
                                  onClearHandle={this.clearHandle}/>
                 </div>
