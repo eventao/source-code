@@ -2,7 +2,7 @@
  * Created by yuant on 2016/12/6.
  */
 let express = require('express');
-// var solve = require('./server/solve-request-parameters');
+let solve = require('./server/solve-request-parameters');
 let app = express();
 app.use('/', express.static(__dirname));
 
