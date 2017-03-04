@@ -3,9 +3,7 @@
  */
 let Sequelize = require('sequelize');
 let sequelize = new Sequelize(
-    'oadb'
-    ,'root'
-    ,'mysql'
+    'oadb','root','mysql'
     ,{
         host:'127.0.0.1',
         port:3306,
@@ -40,24 +38,24 @@ let user = sequelize.define('User',{
     }
 });
 
-user.sync({force:true}).then(function(){
-    console.log("sync");
-});
+// user.sync().then(function(){
+//     console.log("sync");
+// });
 
 module.exports={
     createUser:function(p){
-        // modleSyncHandles.push(function(){
-        //     user.create(p);
-        // });
+        user.create(p).then(function(){
+            console.log("create success!");
+        });
     },
     getUsers:function(p){
         // user.find()
     },
     updateUser:function(p){
-        user.update(p,
-            {
-                'where':{'id':p.id}
-            }
-        );
+        // user.update(p,
+        //     {
+        //         'where':{'id':p.id}
+        //     }
+        // );
     }
 };
