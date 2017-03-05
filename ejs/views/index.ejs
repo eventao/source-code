@@ -6,11 +6,15 @@
 
 <body>
 <p>Hi <%= name %></p>
-<h1><%= title %></h1>
+<h1><%= '循环插入图片' %></h1>
 <ul>
-    <% for(var i=0; i<supplies.length; i++) {%>
-    <li><%= link_to(supplies[i], 'img/'+supplies[i]) %></li>
-    <% } %>
+    <% supplies.forEach(function(img){ %>
+    <li>
+        <a href="#">
+            <img src="<%= 'img/' + img %>" alt="">
+        </a>
+    </li>
+    <% }) %>
 </ul>
 </body>
 </html>

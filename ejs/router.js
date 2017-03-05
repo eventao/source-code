@@ -7,7 +7,12 @@ module.exports = {
             let option = {
                 title:"我的第一个ejs模板页面",
                 name:"小猪",
-                supplies:[]
+                supplies:[
+                    'mi1.jpg',
+                    'mi2.jpg',
+                    'mi3.jpg',
+                    'mi4.jpg'
+                ]
             };
             res.render('index',option);
         });
