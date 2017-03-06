@@ -1,6 +1,15 @@
 /**
  * Created by 涛 on 2017/3/5.
  */
+// var obj = {a:"123"};
+// var obj2 = obj;
+// obj2.b = "234";
+// console.log(obj.b);
+// obj2 = {
+//     c:"456"
+// };
+// console.log(obj.c)
+
 module.exports = {
     router:function(router){
         router.get('/',function(req,res){
@@ -18,3 +27,7 @@ module.exports = {
         });
     }
 };
+
+exports.simpleFun = function(){
+
+}

@@ -7,7 +7,7 @@ let routerConfig = require('./ejs/router');
 let path = require('path');
 let app = express();
 app.set('view engine','ejs');
-app.set('views',path.join(__dirname,'ejs/views'));
+app.set('e',path.join(__dirname,'ejs/views'));
 let router = express.Router();
 routerConfig.router(router);
 app.use('/',router);
