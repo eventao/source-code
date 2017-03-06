@@ -14,10 +14,16 @@
         version:1.0,
         dbObj:null,
         transaction:"todo",
+        dataBase:"dbTitle",
         openDb:function(p){
             let self = this;
             let request = window.indexedDB.open(p.dbName,p.version);
-            request.onupgradeneeded = function(){};
+            request.onupgradeneeded = function(evt){
+                let employeeStore = evt.currentTarget.result.objectStore("employees");
+                employeeStore.createIndex("stateIndex", "state", { unique: false });
+                employeeStore.createIndex("emailIndex", "email", { unique: true });
+                employeeStore.createIndex("zipCodeIndex", "zip_code", { unique: false });
+            };
             request.onsuccess = function(e){
                 let db = e.target.result;
                 self.dbObj = db;
@@ -33,32 +39,61 @@
             let trans = self.dbObj.transaction([self.transaction],
                 IDBTransaction.READ_WRITE);
             //创建Store(存储器)
-            let store = trans.objectStore(self.transaction);
+            let store = trans.objectStore(self.dataBase);
             //一个小数据id是主键
             let students = p || [
                 {
                     name:"梅旭",
                     gender:"男",
+                    email:"2432423423@qq.com",
+                    state:"南充",
+                    zip_code:"672731",
                     id: guid()
                 }
                 ,{
                     name:"陈益民",
                     gender:"男",
+                    email:"342392232@qq.com",
+                    state:"乐山",
+                    zip_code:"372735",
                     id: guid()
                 }
                 ,{
                     name:"李涛",
                     gender:"男",
+                    email:"384758699@qq.com",
+                    state:"乐山",
+                    zip_code:"372735",
                     id: guid()
                 }
                 ,{
                     name:"黄鹤立",
                     gender:"男",
+                    email:"938495855@qq.com",
+                    state:"南充",
+                    zip_code:"672731",
                     id: guid()
                 }
                 ,{
                     name:"万茂",
                     gender:"男",
+                    email:"384944833@qq.com",
+                    state:"乐山",
+                    zip_code:"372735",
+                    id: guid()
+                }
+                ,{
+                    name:"张扬扬",
+                    gender:"女",
+                    email:"384344833@qq.com",
+                    state:"遂宁",
+                    id: guid()
+                }
+                ,{
+                    name:"赵晨",
+                    gender:"男",
+                    email:"38482733@qq.com",
+                    state:"遂宁",
                     id: guid()
                 }
             ];
@@ -69,22 +104,76 @@
                     let r = e;
                 };
             });
-
         },
         getData:function(){
+            let self = this;
             //读取数据
-            let trans = db.transaction(["todo"], IDBTransaction.READ_WRITE);
-            let store = trans.objectStore("todo");
-
+            let trans = db.transaction([self.transaction], IDBTransaction.READ_WRITE);
+            let store = trans.objectStore(self.dataBase);
         }
     };
 
     dbOperate.openDb({
         dbName:"students",
         version:version,
-        success:function(db){
-
-        }
+        success:function(db){}
     });
+
+    let students = [
+        {
+            name:"梅旭",
+            gender:"男",
+            email:"2432423423@qq.com",
+            state:"南充",
+            zip_code:"672731",
+            id: guid()
+        }
+        ,{
+            name:"陈益民",
+            gender:"男",
+            email:"342392232@qq.com",
+            state:"乐山",
+            zip_code:"372735",
+            id: guid()
+        }
+        ,{
+            name:"李涛",
+            gender:"男",
+            email:"384758699@qq.com",
+            state:"乐山",
+            zip_code:"372735",
+            id: guid()
+        }
+        ,{
+            name:"黄鹤立",
+            gender:"男",
+            email:"938495855@qq.com",
+            state:"南充",
+            zip_code:"672731",
+            id: guid()
+        }
+        ,{
+            name:"万茂",
+            gender:"男",
+            email:"384944833@qq.com",
+            state:"乐山",
+            zip_code:"372735",
+            id: guid()
+        }
+        ,{
+            name:"张扬扬",
+            gender:"女",
+            email:"384344833@qq.com",
+            state:"遂宁",
+            id: guid()
+        }
+        ,{
+            name:"赵晨",
+            gender:"男",
+            email:"38482733@qq.com",
+            state:"遂宁",
+            id: guid()
+        }
+    ];
 
 })();
