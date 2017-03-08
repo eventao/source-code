@@ -7,7 +7,7 @@
 </head>
 <body ng-controller="formValidController">
 <form novalidate action="/userUpdate" name="userForm"
-      method="post">
+      method="post" ng-submit="submited($event)">
     <h1>用户注册</h1>
     <div class="row">
         <div>用户名：</div>

@@ -3,8 +3,21 @@
  */
 let express = require('express');
 let solve = require('./server/solve-request-parameters');
+let bodyParser = require('body-parser');
+let session = require("express-session");
+
 let app = express();
 app.use('/', express.static(__dirname));
+
+// parse some custom thing into a Buffer
+app.use(bodyParser.raw({ type: 'application/vnd.custom-type' }));
+// parse an HTML body into a string
+app.use(bodyParser.text({ type: 'text/html' }));
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+// parse application/json
+app.use(bodyParser.json());
+
 
 let router = express.Router();
 function studentsHandle(req, res){
@@ -133,7 +146,9 @@ function studentsHandle(req, res){
 }
 router.post("/students",studentsHandle);
 router.get("/students",studentsHandle);
+router.get("/valid-code",function(req,res){
 
+});
 router.get("/jsonpTest", function (req, res) {
     let data = {
         content: [1, 2, 2, 3, 4, 5, 6],
@@ -144,6 +159,7 @@ router.get("/jsonpTest", function (req, res) {
 });
 
 router.post("/userUpdate",function(req,res){
+    let p = req.body;
     req.on("data",function(data){
         res.write(data);
         res.end();

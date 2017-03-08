@@ -1,0 +1,20 @@
+*{
+    box-sizing:border-box;
+}
+#container2{
+    width:500px;
+    height:auto;
+}
+#container2 .item{
+    height:35px;
+    width:100%;
+    border-bottom:#000 1px dotted;
+}
+#container{
+    width:500px;
+    height:auto;
+}
+#container .item{
+    height:35px;
+    width:100%;
+}

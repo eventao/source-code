@@ -7,31 +7,44 @@
 <body ng-app="mainModule" ng-controller="mainController">
 
 <a ui-sref="hello" ui-sref-active="active">Hello</a>
-<a ui-sref="about" ui-sref-active="active">About</a>
+<a ui-sref="about({id:a.id})" ui-sref-active="active">About</a>
 <ui-view></ui-view>
-
 <script src="../../node_modules/angular/angular.min.js"></script>
 <script src="../../node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
 <script>
     angular.module("mainModule", ['ui.router'])
             .controller("mainController", ["$scope"
                 ,function ($scope){
-
+                    $scope.items = [
+                        {name:"tt1",id:1},
+                        {name:"tt2",id:2},
+                        {name:"about",id:3}
+                    ];
+                    $scope.a = {id:3};
                 }])
             .config(function($stateProvider){
-                var helloState = {
+                let helloState = {
                     name: 'hello',
                     url: '/hello',
                     templateUrl:"views/hello.html"
                 };
-                var aboutState = {
+                let aboutState = {
                     name: 'about',
-                    url: '/about',
-                    template: '<h3>Its the UI-Router hello world app!</h3>'
+                    url: '/about/:id',
+                    template: '<h3>当前路由名称为：{{name}}</h3>',
+                    controller:"aboutController"
                 };
                 $stateProvider.state(helloState);
                 $stateProvider.state(aboutState);
+            })
+        .controller("aboutController",["$scope","$stateParams",function($scope,$stateParams){
+            $scope.items.forEach(function(item){
+                if(item.id == $stateParams.id){
+                    $scope.name = item.name;
+                    $scope.id = item.id;
+                }
             });
+        }]);
 
 </script>
 </body>

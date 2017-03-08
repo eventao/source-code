@@ -1,0 +1,27 @@
+body{
+    margin:0;
+    padding:0;
+}
+.container{
+    width:100vw;
+    height:100vh;
+    position:relative;
+}
+#selectable{
+    width:100%;
+    height:100%;
+    position:relative;
+}
+#selectable .ui-widget-content{
+    width:100px;
+    height:30px;
+    list-style:none;
+}
+#selectable .ui-widget-content.ui-selecting{
+    background-color:yellow;
+    color:#000;
+}
+#selectable .ui-widget-content.ui-selected{
+    background-color:red;
+    color:#fff;
+}

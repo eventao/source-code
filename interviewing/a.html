@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /**
+     * 可用   程序不能报错，函数名不能用错
+     正确的输入，返回正确的输出。
+
+     健壮   考虑到错误的输入，程序不能报错。
+     不能溢出
+
+     可靠   错误的输入，依然要有合理的输出。
+
+     宽容   模凌两可的输入，但可以转换为正确
+     的输入时，要返回正确的输出
+
+     精益求精  合理的注释(不能冗余，也不能过于精简)
+
+     * **/
+
+    /**
+     * 产生指定范围的不重复随机数
+     * @param n 产生随机数的位数
+     * @param max 随机数最大值
+     * @param min 随机数最小值
+     * @returns {Array} 数组返回值
+     */
+    function fn(n,max,min){
+        var result = [];
+        //region 输入条件判断
+        max = max || 32;
+        min = min || 2;
+        n = n || 1;
+        if(max < min){
+            max = max + min;
+            min = max - min;
+            max = max - min;
+        }
+        if(typeof n === "string"){
+            if(typeof n*1 === "number"){
+                n = n * 1;
+            }
+        }
+        if(typeof n === "number"){
+            n = Number(n.toFixed(0));
+            if(n < min){
+                return [];
+            }
+        }else{
+            return [];
+        }
+        if(n>(max - min)+1){
+            return result;
+        }
+        if(isNaN(n)){
+            return [];
+        }
+        //endregion
+
+        //产生不重复的随机数
+        for(var i = 0;i<n;i++){
+            var r = Math.random()*(max-min)+min;
+            var rInt = r.toFixed(0)*1;
+//            result.every(function(i2){
+//                return i2 !== rInt;
+//            })
+            var mul = result.some(function(i1){
+                return i1 === rInt;
+            });
+            if(mul){
+                i--;
+            }else{
+                result.push(rInt);
+            }
+        }
+
+        //返回值
+        return result;
+    }
+
+    document.write(fn(5));
+</script>
+
+</body>
+</html>
