@@ -14,7 +14,7 @@
   src:url('../fonts/iconfont.ttf');
 }
 
-body,ul,li,p,a{
+body,ul,ol,li,p,a{
   padding:0;
   margin:0;
 }
@@ -23,7 +23,7 @@ body{
 }
 #container{
   width:100vw;
-  min-height:100vh;
+  min-height: 100vw;
   position:relative;
   background-color: #F8EFD9;
   &>div,&> img{
@@ -78,7 +78,7 @@ body{
     border-bottom: 1px solid rgba(0,0,0,0.3);
     &:after{
       content: "\e77b";
-      right: 5px;
+      right: 3vw;
       position: absolute;
       display: block;
       z-index: 5;
@@ -99,33 +99,76 @@ body{
 .card-items{
   width:100vw;
   height:auto;
+  background-color:#F8EFD9;
   top: 137vw;
   .item{
+    padding-top: 0.1vw;
     width:90vw;
-    margin:0 auto;
+    margin:0 auto 3vw auto;
     text-align:center;
     input[type=checkbox]{
       visibility:hidden;
-    }
-    div{
-      width: 100%;
-      height: auto;
-      min-height: 11vw;
-      background-color: #fff;
-      border-radius: 3vw;
-      position: relative;
-      &:after{
-        position: absolute;
-        right: 7vw;
-        top: 2vw;
-        content: "\e77b";
+      position:absolute;
+      left:0;
+      top:0;
+      &:checked~div{
+        transform:rotate(270deg);
+      }
+      &:checked~.content{
+        height:auto;
+        max-height: 86vw;
+        visibility:visible;
+        padding: 5vw 6vw 5vw 11vw;
+        li{
+          visibility:visible;
+        }
       }
     }
-    div.content{
-      width:100%;
-      height:auto;
+    height: auto;
+    min-height: 11vw;
+    background-color: #fff;
+    border-radius: 1.2vw;
+    position: relative;
+    div:after{
+      content: "\e608";
+      font-size: 7vw;
+    }
+    div{
+      position: absolute;
+      right: 5vw;
+      top: 2vw;
+      line-height: 7vw;
+      transform: rotate(90deg);
+      transition:transform 0.2s;
+    }
+    label{
+      position: absolute;
+      z-index: 1;
+      display: block;
+      width: 100%;
+      height: 11vw;
+      text-align: left;
+      padding:3vw 5vw;
+      font-size: 3.4vw;
+    }
+    ol.content{
+      max-height:0;
+      overflow:hidden;
+      li{
+        visibility:hidden;
+      }
       font-size: 1vw;
       text-align: left;
+      width: 100%;
+      background-color: #FBF7EC;
+      border: 1px solid #fff;
+      border-top: none;
+      margin: 11vw 0 0 0;
+      padding:0;
+      transition:max-height 0.3s;
+    }
+    &:last-child{
+      margin-bottom: 10vw;
     }
   }
 }
