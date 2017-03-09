@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box; }
+
+@font-face {
+  font-family: ping-fang-sc;
+  src: url("../fonts/PingFangSC-Regular.ttf"); }
+@font-face {
+  font-family: din-media;
+  src: url("../fonts/DIN-Medium.otf"); }
+@font-face {
+  font-family: iconfont;
+  src: url("../fonts/iconfont.ttf"); }
+body, ul, li, p, a {
+  padding: 0;
+  margin: 0; }
+
+body {
+  font-family: 'microsoft yahei', Arial, serif,iconfont; }
+
+#container {
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  background-color: #F8EFD9; }
+  #container > div, #container > img {
+    position: absolute; }
+
+#background {
+  width: 100%; }
+
+#logo {
+  width: 10vw;
+  height: auto;
+  left: 4vw;
+  top: 5vw; }
+
+.advertise {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 0;
+  top: 38vw;
+  line-height: 8vw;
+  font-size: 4.2vw; }
+  .advertise div:nth-child(1) {
+    color: #fff; }
+  .advertise div:nth-child(2) {
+    color: #FFFDC6; }
+
+.func-btn {
+  width: 100vw;
+  height: 26vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 0;
+  top: 105vw;
+  color: #fff;
+  text-align: center;
+  justify-content: space-between; }
+  .func-btn > div {
+    width: 90vw;
+    height: 12vw;
+    font-size: 4.9vw;
+    border-radius: 2vw;
+    line-height: 11vw;
+    position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3); }
+    .func-btn > div:after {
+      content: "\e77b";
+      right: 5px;
+      position: absolute;
+      display: block;
+      z-index: 5;
+      top: 0;
+      font-size: 2vw; }
+
+.apply-card-btn {
+  background: #de3f2a; }
+
+.deposit-card-btn {
+  background: #76a9e2; }
+
+.card-items {
+  width: 100vw;
+  height: auto;
+  top: 137vw; }
+  .card-items .item {
+    width: 90vw;
+    margin: 0 auto;
+    text-align: center; }
+    .card-items .item input[type=checkbox] {
+      visibility: hidden; }
+    .card-items .item div {
+      width: 100%;
+      height: auto;
+      min-height: 11vw;
+      background-color: #fff;
+      border-radius: 3vw;
+      position: relative; }
+      .card-items .item div:after {
+        position: absolute;
+        right: 7vw;
+        top: 2vw;
+        content: "\e77b"; }
+    .card-items .item div.content {
+      width: 100%;
+      height: auto;
+      font-size: 1vw;
+      text-align: left; }
+
+/*# sourceMappingURL=index.css.map */
