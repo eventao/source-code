@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>展示</title>
+</head>
+<body>
+<script>
+    let requestUrl = "ws://120.26.101.164:36584/?token=fbiyZbKHfJqAi5xigq7WnJN9s5XFq3CsxtGl05SQZZ9_zaugx3uJ3IGjqKiNqZynfqLVmcaobKDFlmnOf3x7r4q7kqfHeo3Li46DnZjPrGl7n6rdsahrrrC3bZV_o4KffKerYcSKaNF7oaCqg6rKaH-JzJaxuYStybV2og";
+    let ws = new WebSocket(requestUrl);
+    ws.onopen = function(){
+        let p = arguments;
+    };
+    ws.onmessage = function(evt){
+        let received_msg = evt.data;
+    }
+</script>
+</body>
+</html>

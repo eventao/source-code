@@ -1,4 +1,4 @@
-*{
+﻿*{
   box-sizing:border-box;
 }
 @font-face {
@@ -13,13 +13,18 @@
   font-family:iconfont;
   src:url('../fonts/iconfont.ttf');
 }
-
-body,ul,ol,li,p,a{
+a{
+  color:#fff;
+  text-decoration:none;
+}
+body,ul,ol,li,p,a,img{
   padding:0;
   margin:0;
 }
 body{
-  font-family: 'microsoft yahei', Arial, serif,iconfont;
+  font-family: 'microsoft yahei', Arial, serif,'iconfont';
+  height:100vh;
+  overflow-y:auto;
 }
 #container{
   width:100vw;
@@ -68,7 +73,7 @@ body{
   color: #fff;
   text-align: center;
   justify-content: space-between;
-  &>div{
+  &>a{
     width: 90vw;
     height: 12vw;
     font-size: 4.9vw;
@@ -76,6 +81,7 @@ body{
     line-height: 11vw;
     position:relative;
     border-bottom: 1px solid rgba(0,0,0,0.3);
+    display:block;
     &:after{
       content: "\e77b";
       right: 3vw;
@@ -94,7 +100,6 @@ body{
 .deposit-card-btn{
   background:rgb(118, 169, 226);
 }
-
 
 .card-items{
   width:100vw;
@@ -170,6 +175,361 @@ body{
     }
     &:last-child{
       margin-bottom: 10vw;
+    }
+  }
+}
+
+
+
+
+.shopping-card{
+  width: 100vw;
+  height: auto;
+  background: url(../images/bg_newcard.png) no-repeat;
+  background-size: 100%;
+  &>.title{
+    width: 100%;
+    position: relative;
+    text-align: center;
+    margin-top: 10vw;
+    border-top: 1px solid transparent;
+    div:nth-child(1){
+      width: 100%;
+      height: 10vw;
+      line-height: 10vw;
+      z-index: 1;
+      margin-top: -10vw;
+    }
+    a.card-pay-Link{
+      position: absolute;
+      right: 5vw;
+      z-index: 2;
+      top: -8vw;
+      color: #DF4531;
+    }
+  }
+  .content{
+    width: 100vw;
+    height: auto;
+    font-size: 4vw;
+    color: #fff;
+    &>div:nth-child(1){
+      margin: 9vw 0 0 18vw;
+    }
+    &>div:nth-child(2){
+      margin: 12vw 0 0 18vw;
+    }
+    .pre-store{
+      width: 100vw;
+      height: 13vw;
+      background: rgba(255, 255, 255, 0.3);
+      display: flex;
+      justify-content: space-around;
+      margin-top: 5.5vw;
+      align-items: center;
+      .title{
+        width: 26vw;
+        color: #000;
+        text-align: center;
+        font-size: 3.6vw;
+        padding-left: 2vw;
+        line-height: 9.1vw;
+        display: flex;
+        justify-content: space-around;
+      }
+      .calculate{
+        display: flex;
+        width: 45vw;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        span{
+          color:#E04531;
+          font-weight: bold;
+          font-family: DINAlternate-Bold, serif;
+        }
+        color:#000;
+      }
+      .result{
+        display: flex;
+        width:22vw;
+        align-items:center;
+        justify-content: center;
+        span{
+          color:#E04531;
+          font-weight: bold;
+          font-family: ping-fang-sc, serif;
+        }
+        color:#000;
+      }
+      &>div{
+        height:75%;
+      }
+      border-bottom:1px solid #D7D7D8;
+    }
+    .pre-store.total{
+      margin-top: 0;
+      .calculate{
+        border:none;
+        justify-content: space-between;
+        &>div{
+          border:1px solid #D7D7D8;
+          justify-content: space-between;
+          display:flex;
+          height:100%;
+        }
+      }
+      .calculate .sub{
+        width: 10vw;
+        color: #000;
+        font-size: 7vw;
+        justify-content: center;
+        font-family: ping-fang-sc, serif;
+        align-items: flex-end;
+      }
+      .calculate .content{
+        width: 20vw;
+        color:#E04531;
+        justify-content: center;
+        align-items: center;
+      }
+      .calculate .plus{
+        width: 10vw;
+        color:#000;
+        font-size:5vw;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .pre-store.express{
+      margin-top: 0;
+      .title{
+        justify-content: center;
+        letter-spacing: 0.2vw;
+      }
+      .calculate{
+        border:none;
+      }
+      .result{
+        font-family: ping-fang-sc, serif;
+      }
+    }
+    .pre-store.express.addr{
+      .calculate{
+        color: rgba(0, 0, 0, 0.4);
+        justify-content: flex-start;
+      }
+      .result{
+        font-family: 'iconfont';
+        justify-content: flex-end;
+        padding-right: 7vw;
+        &:after{
+          content: '\e77b';
+          font-size: 4.2vw;
+          font-weight: bold;
+        }
+      }
+    }
+    .pre-store.express.accept{
+      .title{
+        position: relative;
+        align-items: center;
+        width: 7vw;
+        padding: 0;
+        margin-right: -12vw;
+        .icon{
+          width: 5.2vw;
+          height: 5.2vw;
+          position:absolute;
+          top:-1px;
+          left:-1px;
+          color: #fff;
+          line-height: 5.2vw;
+          border-radius:1vw;
+          &:after{
+            content:'\e609';
+          }
+        }
+      }
+      .accepted{
+        width: 5vw;
+        height: 4.8vw;
+        border: 1px solid #CCCCCC;
+        border-radius: 1vw;
+        position: relative;
+        input{
+          background: none;
+          opacity: 0.001;
+          position: absolute;
+          z-index: 2;
+          top: 0;
+          left: 0;
+          &:checked~div{
+            background-color:#E04531;
+          }
+        }
+      }
+      .calculate{
+        font-size: 3.3vw;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        a{
+          color:#DF4531;
+        }
+      }
+    }
+    .apply-card-instruct{
+      width:100vw;
+      height:auto;
+      margin-bottom:13vw;
+      color:#000;
+      background:rgba(0, 0, 0, 0.06);
+      border-top: 1px solid rgba(0,0,0,0);
+      font-size: 0.1vw;
+      ol{
+        width: 83%;
+        margin: 0 auto;
+        padding: 0 0 0 3vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 53vw;
+      }
+      p{
+        width: 83%;
+        margin:3.2vw auto 2vw;
+      }
+      div{
+        text-align: center;
+        display: flex;
+        font-family: 'din-media';
+        width: 100%;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+        margin: 6vw 0 0 0;
+        padding-bottom: 4vw;
+        img{
+          width:6vw;
+          height:auto;
+          margin-right:1.3vw;
+        }
+      }
+    }
+
+  }
+  footer{
+    width:100vw;
+    height:13vw;
+    background:#fff;
+    border-top:1px solid #CCCCCC;
+    position:fixed;
+    bottom:0;
+    left:0;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    div{
+      width:50%;
+      height:100%;
+      display:flex;
+      align-items:center;
+      justify-content: center;
+      font-size:3vw;
+      span{
+        color:#E04531;
+        font-size:6vw;
+        font-family:din-media;
+        position:relative;
+        b{
+          font-weight: 400;
+          position: absolute;
+          bottom: 1vw;
+          color: #000;
+          font-size: 3.2vw;
+          right: -4.5vw;
+        }
+      }
+    }
+    div:last-child{
+      background-color: #E04531;
+      color: #fff;
+      font-size: 4.5vw;
+      font-weight: bold;
+    }
+  }
+}
+
+
+
+#cardPay{
+  background:none;
+  margin:0;
+  .content{
+    div{
+      margin:0;
+    }
+  }
+  .search-wrapper{
+    width:100vw;
+    height:17vw;
+    background-color:#f4f4f4;
+    margin:0;
+    display:flex;
+    align-items: center;
+    .logo{
+      width:10vw;
+      margin:0 3vw;
+    }
+    input{
+      height: 56%;
+      width: 80.2vw;
+      background: none;
+      border: none;
+    }
+  }
+  .pay-sum{
+    .title{
+      color:#a8a8a8;
+    }
+    .item{
+      width: 90vw;
+      height: 14vw;
+      margin:2vw auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding:0 7vw;
+      border:#DBDBDB 1px solid;
+      border-radius:1.2vw;
+      color:rgba(0, 0, 0, 0.4);
+      font-size: 6vw;
+      &>.price{
+        font-size: 4.5vw;
+      }
+    }
+    .item.selected{
+      background:#DE3F2A;
+      color:#fff;
+      position:relative;
+      img{
+        position: absolute;
+        top: 0;
+        width: 8.4vw;
+        right: 0;
+      }
+    }
+    div.title{
+      width: 90vw;
+      padding: 0 5vw;
+      font-size: 3.1vw;
+      margin-top: 3vw;
+    }
+  }
+
+  .apply-card-instruct{
+    .services{
+      margin-top:5vw;
     }
   }
 }

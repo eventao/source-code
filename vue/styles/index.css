@@ -10,12 +10,18 @@
 @font-face {
   font-family: iconfont;
   src: url("../fonts/iconfont.ttf"); }
-body, ul, ol, li, p, a {
+a {
+  color: #fff;
+  text-decoration: none; }
+
+body, ul, ol, li, p, a, img {
   padding: 0;
   margin: 0; }
 
 body {
-  font-family: 'microsoft yahei', Arial, serif,iconfont; }
+  font-family: 'microsoft yahei', Arial, serif,'iconfont';
+  height: 100vh;
+  overflow-y: auto; }
 
 #container {
   width: 100vw;
@@ -60,15 +66,16 @@ body {
   color: #fff;
   text-align: center;
   justify-content: space-between; }
-  .func-btn > div {
+  .func-btn > a {
     width: 90vw;
     height: 12vw;
     font-size: 4.9vw;
     border-radius: 2vw;
     line-height: 11vw;
     position: relative;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3); }
-    .func-btn > div:after {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    display: block; }
+    .func-btn > a:after {
       content: "\e77b";
       right: 3vw;
       position: absolute;
@@ -147,5 +154,286 @@ body {
         visibility: hidden; }
     .card-items .item:last-child {
       margin-bottom: 10vw; }
+
+.shopping-card {
+  width: 100vw;
+  height: auto;
+  background: url(../images/bg_newcard.png) no-repeat;
+  background-size: 100%; }
+  .shopping-card > .title {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    margin-top: 10vw;
+    border-top: 1px solid transparent; }
+    .shopping-card > .title div:nth-child(1) {
+      width: 100%;
+      height: 10vw;
+      line-height: 10vw;
+      z-index: 1;
+      margin-top: -10vw; }
+    .shopping-card > .title a.card-pay-Link {
+      position: absolute;
+      right: 5vw;
+      z-index: 2;
+      top: -8vw;
+      color: #DF4531; }
+  .shopping-card .content {
+    width: 100vw;
+    height: auto;
+    font-size: 4vw;
+    color: #fff; }
+    .shopping-card .content > div:nth-child(1) {
+      margin: 9vw 0 0 18vw; }
+    .shopping-card .content > div:nth-child(2) {
+      margin: 12vw 0 0 18vw; }
+    .shopping-card .content .pre-store {
+      width: 100vw;
+      height: 13vw;
+      background: rgba(255, 255, 255, 0.3);
+      display: flex;
+      justify-content: space-around;
+      margin-top: 5.5vw;
+      align-items: center;
+      border-bottom: 1px solid #D7D7D8; }
+      .shopping-card .content .pre-store .title {
+        width: 26vw;
+        color: #000;
+        text-align: center;
+        font-size: 3.6vw;
+        padding-left: 2vw;
+        line-height: 9.1vw;
+        display: flex;
+        justify-content: space-around; }
+      .shopping-card .content .pre-store .calculate {
+        display: flex;
+        width: 45vw;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        color: #000; }
+        .shopping-card .content .pre-store .calculate span {
+          color: #E04531;
+          font-weight: bold;
+          font-family: DINAlternate-Bold, serif; }
+      .shopping-card .content .pre-store .result {
+        display: flex;
+        width: 22vw;
+        align-items: center;
+        justify-content: center;
+        color: #000; }
+        .shopping-card .content .pre-store .result span {
+          color: #E04531;
+          font-weight: bold;
+          font-family: ping-fang-sc, serif; }
+      .shopping-card .content .pre-store > div {
+        height: 75%; }
+    .shopping-card .content .pre-store.total {
+      margin-top: 0; }
+      .shopping-card .content .pre-store.total .calculate {
+        border: none;
+        justify-content: space-between; }
+        .shopping-card .content .pre-store.total .calculate > div {
+          border: 1px solid #D7D7D8;
+          justify-content: space-between;
+          display: flex;
+          height: 100%; }
+      .shopping-card .content .pre-store.total .calculate .sub {
+        width: 10vw;
+        color: #000;
+        font-size: 7vw;
+        justify-content: center;
+        font-family: ping-fang-sc, serif;
+        align-items: flex-end; }
+      .shopping-card .content .pre-store.total .calculate .content {
+        width: 20vw;
+        color: #E04531;
+        justify-content: center;
+        align-items: center; }
+      .shopping-card .content .pre-store.total .calculate .plus {
+        width: 10vw;
+        color: #000;
+        font-size: 5vw;
+        justify-content: center;
+        align-items: center; }
+    .shopping-card .content .pre-store.express {
+      margin-top: 0; }
+      .shopping-card .content .pre-store.express .title {
+        justify-content: center;
+        letter-spacing: 0.2vw; }
+      .shopping-card .content .pre-store.express .calculate {
+        border: none; }
+      .shopping-card .content .pre-store.express .result {
+        font-family: ping-fang-sc, serif; }
+    .shopping-card .content .pre-store.express.addr .calculate {
+      color: rgba(0, 0, 0, 0.4);
+      justify-content: flex-start; }
+    .shopping-card .content .pre-store.express.addr .result {
+      font-family: 'iconfont';
+      justify-content: flex-end;
+      padding-right: 7vw; }
+      .shopping-card .content .pre-store.express.addr .result:after {
+        content: '\e77b';
+        font-size: 4.2vw;
+        font-weight: bold; }
+    .shopping-card .content .pre-store.express.accept .title {
+      position: relative;
+      align-items: center;
+      width: 7vw;
+      padding: 0;
+      margin-right: -12vw; }
+      .shopping-card .content .pre-store.express.accept .title .icon {
+        width: 5.2vw;
+        height: 5.2vw;
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        color: #fff;
+        line-height: 5.2vw;
+        border-radius: 1vw; }
+        .shopping-card .content .pre-store.express.accept .title .icon:after {
+          content: '\e609'; }
+    .shopping-card .content .pre-store.express.accept .accepted {
+      width: 5vw;
+      height: 4.8vw;
+      border: 1px solid #CCCCCC;
+      border-radius: 1vw;
+      position: relative; }
+      .shopping-card .content .pre-store.express.accept .accepted input {
+        background: none;
+        opacity: 0.001;
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0; }
+        .shopping-card .content .pre-store.express.accept .accepted input:checked ~ div {
+          background-color: #E04531; }
+    .shopping-card .content .pre-store.express.accept .calculate {
+      font-size: 3.3vw;
+      text-overflow: ellipsis;
+      white-space: nowrap; }
+      .shopping-card .content .pre-store.express.accept .calculate a {
+        color: #DF4531; }
+    .shopping-card .content .apply-card-instruct {
+      width: 100vw;
+      height: auto;
+      margin-bottom: 13vw;
+      color: #000;
+      background: rgba(0, 0, 0, 0.06);
+      border-top: 1px solid transparent;
+      font-size: 0.1vw; }
+      .shopping-card .content .apply-card-instruct ol {
+        width: 83%;
+        margin: 0 auto;
+        padding: 0 0 0 3vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 53vw; }
+      .shopping-card .content .apply-card-instruct p {
+        width: 83%;
+        margin: 3.2vw auto 2vw; }
+      .shopping-card .content .apply-card-instruct div {
+        text-align: center;
+        display: flex;
+        font-family: 'din-media';
+        width: 100%;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+        margin: 6vw 0 0 0;
+        padding-bottom: 4vw; }
+        .shopping-card .content .apply-card-instruct div img {
+          width: 6vw;
+          height: auto;
+          margin-right: 1.3vw; }
+  .shopping-card footer {
+    width: 100vw;
+    height: 13vw;
+    background: #fff;
+    border-top: 1px solid #CCCCCC;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .shopping-card footer div {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3vw; }
+      .shopping-card footer div span {
+        color: #E04531;
+        font-size: 6vw;
+        font-family: din-media;
+        position: relative; }
+        .shopping-card footer div span b {
+          font-weight: 400;
+          position: absolute;
+          bottom: 1vw;
+          color: #000;
+          font-size: 3.2vw;
+          right: -4.5vw; }
+    .shopping-card footer div:last-child {
+      background-color: #E04531;
+      color: #fff;
+      font-size: 4.5vw;
+      font-weight: bold; }
+
+#cardPay {
+  background: none;
+  margin: 0; }
+  #cardPay .content div {
+    margin: 0; }
+  #cardPay .search-wrapper {
+    width: 100vw;
+    height: 17vw;
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    align-items: center; }
+    #cardPay .search-wrapper .logo {
+      width: 10vw;
+      margin: 0 3vw; }
+    #cardPay .search-wrapper input {
+      height: 56%;
+      width: 80.2vw;
+      background: none;
+      border: none; }
+  #cardPay .pay-sum .title {
+    color: #a8a8a8; }
+  #cardPay .pay-sum .item {
+    width: 90vw;
+    height: 14vw;
+    margin: 2vw auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7vw;
+    border: #DBDBDB 1px solid;
+    border-radius: 1.2vw;
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 6vw; }
+    #cardPay .pay-sum .item > .price {
+      font-size: 4.5vw; }
+  #cardPay .pay-sum .item.selected {
+    background: #DE3F2A;
+    color: #fff;
+    position: relative; }
+    #cardPay .pay-sum .item.selected img {
+      position: absolute;
+      top: 0;
+      width: 8.4vw;
+      right: 0; }
+  #cardPay .pay-sum div.title {
+    width: 90vw;
+    padding: 0 5vw;
+    font-size: 3.1vw;
+    margin-top: 3vw; }
+  #cardPay .apply-card-instruct .services {
+    margin-top: 5vw; }
 
 /*# sourceMappingURL=index.css.map */

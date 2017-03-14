@@ -5,6 +5,8 @@ let express = require('express');
 let solve = require('./server/solve-request-parameters');
 let bodyParser = require('body-parser');
 let session = require("express-session");
+let spiderRouter = require("./services/spider/spider");
+
 
 let app = express();
 app.use('/', express.static(__dirname));
@@ -144,6 +146,9 @@ function studentsHandle(req, res){
         }
     ]);
 }
+
+spiderRouter.router(router);
+
 router.post("/students",studentsHandle);
 router.get("/students",studentsHandle);
 router.get("/valid-code",function(req,res){
