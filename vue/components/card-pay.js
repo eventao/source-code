@@ -15,9 +15,9 @@
                         '<img class="logo" src="./images/pay-logo.png" />'+
                         '<input placeholder="请输入加油卡卡号" type="text" />'+
                     '</div>'+
-
                     '<div class="pay-sum">'+
                         '<div class="title">请选择充值金额</div>'+
+
                         '<div class="item selected">'+
                             '<div>1000</div>'+
                             '<div class="price">售970元</div>'+

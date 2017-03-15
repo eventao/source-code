@@ -2,7 +2,7 @@
  * Created by forli on 2017/2/15.
  */
 (function (angular) {
-    var starter = angular.module("starter", []);
+    var starter = angular.module("starter");
     starter.config(function ($provide) {
         $provide.provider('MathService', function () {
             this.$get = function () {
