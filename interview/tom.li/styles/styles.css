@@ -1,0 +1,39 @@
+body{
+    margin:0;
+    padding:0;
+}
+*{
+    box-sizing:border-box;
+}
+.container{
+    width:450px;
+}
+.container .input-money{
+    width: 219px;
+    height: 27px;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+}
+.container .row{
+    display:flex;
+    flex-wrap:wrap;
+    height:40px;
+    border-bottom:1px solid #ddd;
+    align-items:center;
+}
+.container .row > div{
+    width:80px;
+    text-align:right;
+}
+.container .row > p{
+    width:120px;
+}
+.container .row > .max-limit{
+    width:150px;
+    text-align:left;
+    color:#f00;
+}
+.save-data-btn{
+    height:30px;
+    justify-self: flex-end;
+}

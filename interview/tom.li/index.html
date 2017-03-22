@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body ng-app="starter" ng-controller="starterController">
+
+<money-input total-input="totalInput" max-val="inputLimit"
+             save-data="saveData()"></money-input>
+
+<script src="./lib/angular.js"></script>
+<script>
+    (function(angular){
+        angular.module("starter",[]);
+    })(window.angular);
+</script>
+<script src="./scripts/money-directive.js"></script>
+<script src="./scripts/index.js"></script>
+</body>
+</html>

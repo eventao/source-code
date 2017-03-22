@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div>金额：</div>
+        <input class="input-money"
+               ng-model="totalInput"
+               ng-keydown="inputKeydown($event)"
+               ng-keyup="inputKeyup($event)"
+               placeholder="请输入金额">
+        <div class="max-limit" ng-show="isMaxLimit">最大值为{{maxVal}}</div>
+    </div>
+    <div class="row">
+        <div>输入值为：</div>
+        <p ng-bind="totalInput">
+        </p>
+    </div>
+    <div class="row">
+        <input class="save-data-btn"
+               value="保存数据" type="button" ng-click="saveData()">
+    </div>
+</div>
