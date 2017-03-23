@@ -5,6 +5,7 @@
                ng-model="totalInput"
                ng-keydown="inputKeydown($event)"
                ng-keyup="inputKeyup($event)"
+               ng-blur="inputBlur($event)"
                placeholder="请输入金额">
         <div class="max-limit" ng-show="isMaxLimit">最大值为{{maxVal}}</div>
     </div>

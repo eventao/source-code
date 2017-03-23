@@ -9,9 +9,10 @@
             scope:{
                 saveData:"&",
                 totalInput:"=",
-                maxVal:"="
+                maxVal:"=",
+                dotLimit:"="
             },
-            controller:["$scope",function($scope){
+            controller:["$scope","$timeout",function($scope,$timeout){
 
                 /**
                  * 允许输入的特殊键(例：backspace、tab 等)
@@ -20,22 +21,22 @@
                  */
                 function isAllowKey(e){
                     var r = true;
-                    if(e.keyCode != 8  //backspace键
-                        && e.keyCode != 9  //tab键
-                        && e.keyCode != 17 //ctrl键
-                        && e.keyCode != 18 //Alt键
-                        && e.keyCode != 16 //shift键
-                        && e.keyCode != 93 //菜单键
-                        && e.keyCode != 37 //左方向键
-                        && e.keyCode != 39 //右方向键
-                        && e.keyCode != 38 //上方向键
-                        && e.keyCode != 40 //下方向键
-                        && e.keyCode != 36 //home键
-                        && e.keyCode != 35 //end键
-                        && e.keyCode != 116 //f5键
-                        && e.keyCode != 190 //点号键
-                        && e.keyCode != 46 //delete键
-                        && (e.keyCode != 69 && e.key !== ".") //e键
+                    if(e.key != 'Backspace'  //backspace键
+                        && e.key != 'Tab'  //tab键
+                        && e.key != 'Control' //ctrl键
+                        && e.key != 'Alt' //Alt键
+                        && e.key != 'Shift' //shift键
+                        && e.key != 'ContextMenu' //菜单键
+                        && e.key != 'ArrowLeft' //左方向键
+                        && e.key != 'ArrowRight' //右方向键
+                        && e.key != 'ArrowUp' //上方向键
+                        && e.key != 'ArrowDown' //下方向键
+                        && e.key != 'Home' //home键
+                        && e.key != 'End' //end键
+                        && e.key != 'F5' //f5键
+                        && e.key != '.' //点号键
+                        && e.key != 'Delete' //delete键
+                        && e.key != 'e' //e键
                     ){
                         r = false;
                     }
@@ -52,12 +53,13 @@
                     if(strVal.indexOf('.') > -1 ){
                         var rVal = strVal.split('.')[1];
                         //只能有一个小数点
-                        if(e.keyCode === 190){
+                        if(e.key === "."){
                             e.preventDefault();
                             return false;
                         }
-                        //小数点后只能有两位
-                        if(rVal.length > 1 && !isAllowKey(e)){
+                        //小数点后位数限制
+                        if(!$scope.dotLimit || $scope.dotLimit<1){$scope.dotLimit=1}
+                        if(rVal.length > ($scope.dotLimit-1) && !isAllowKey(e)){
                             e.preventDefault();
                             return false;
                         }
@@ -71,6 +73,7 @@
                  */
                 function thousandSplit(p){
                     var result = "";
+                    p = String(p);
                     if(!p || !p.trim()){
                         return result;
                     }
@@ -106,20 +109,26 @@
                 var strVal = String($scope.totalInput);
                 $scope.inputKeydown = function(e){
                     //非数字键判断(兼容ie和低版本浏览器)
-                    if(e.keyCode < 48 || e.keyCode > 57){
+                    var realkey=String.fromCharCode(e.key)
+                    var isNumber = /^[0-9]$/.test(e.key);
+                    if(!isNumber){
                         if(!isAllowKey(e)){
                             e.preventDefault();
                             return false;
                         }
                     }
-                    strVal = $scope.totalInput;
+                    strVal = String($scope.totalInput);
+                    if(!strVal){
+                        //第一个字符为小数点
+                        if(e.key === "."){
+                            $scope.totalInput = "0";
+                        }
+                    }
                     if(strVal){
                         //小数点判断
                         dotJudge(strVal,e);
-
                         //最大值限制
                         maxLimit(strVal,e);
-
                         //添加千分位
                         if(!$scope.isMaxLimit){
                             if(!isAllowKey(e)){
@@ -128,15 +137,13 @@
                         }
                     }
                 };
+
+                $scope.interval = null;
                 $scope.inputKeyup = function(e){
-                    //中文判断
-                    if(e.key === "Process"){
-                        $scope.totalInput = strVal;
-                        console.log($scope.totalInput);
-                        console.log(strVal);
-                    }
                 };
-                $scope.totalInput;
+                $scope.inputBlur = function(){
+                    $timeout.cancel($scope.interval);
+                }
             }]
         }
     }]);
